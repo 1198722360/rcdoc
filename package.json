@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "docs:build": "vuepress-vite build src",
+    "docs:build:cf": "vuepress-vite build src && mkdir -p src/.vuepress/output/docs && mv src/.vuepress/dist/* src/.vuepress/output/docs/",
     "docs:clean-dev": "vuepress-vite dev src --clean-cache",
     "docs:dev": "vuepress-vite dev src",
     "docs:update-package": "yarn dlx vp-update"

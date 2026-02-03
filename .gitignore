@@ -3,6 +3,7 @@ node_modules/
 
 # VuePress 构建产物和缓存
 src/.vuepress/dist/
+src/.vuepress/output/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 
