@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+
+# VuePress 构建产物和缓存
+src/.vuepress/dist/
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+
+# 日志
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude

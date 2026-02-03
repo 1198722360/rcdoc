@@ -1,0 +1,49 @@
+// place your custom styles here
+
+// Fix for custom home page layout - make it full width
+// Use :has() selector since pageClass doesn't apply custom-home class properly
+.vp-page:has(.home-page) {
+  // Hide the default page title, meta info on home page
+  .vp-page-title {
+    display: none !important;
+  }
+
+  .vp-page-meta {
+    display: none !important;
+  }
+
+  .vp-breadcrumb {
+    display: none !important;
+  }
+
+  .vp-comment {
+    display: none !important;
+  }
+
+  // Remove padding from vp-page
+  padding: 0 !important;
+  padding-top: 0 !important;
+
+  // Force parent containers to be full width
+  > div {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    > div {
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+// Ensure home-page takes full width using fixed positioning technique
+.home-page {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
