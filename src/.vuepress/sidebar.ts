@@ -70,6 +70,11 @@ export default sidebar({
                     text: "OpenCode",
                     icon: "mynaui:code-waves",
                     link: "opencode.md",
+                },
+                {
+                    text: "WSL 配置",
+                    icon: "mynaui:letter-w",
+                    link: "wsl.md",
                 }
             ],
         },
