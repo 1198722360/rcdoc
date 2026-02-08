@@ -51,13 +51,13 @@ wsl --unregister Ubuntu-24.04
 
 @tab 指定位置安装发行版
 ```bash
-wsl install <DistributionName> --location ""
+wsl --install <DistributionName> --location ""
 ```
 
 > 1.在目标位置创建新文件夹，如D:\wsl
 > 2.通过此命令安装Ubuntu-24.04
 ```bash
-wsl install Ubuntu-24.04 --location "D:\wsl"
+wsl --install Ubuntu-24.04 --location "D:\wsl"
 ```
 
 @tab 更多相关参数
