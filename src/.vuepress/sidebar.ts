@@ -1,99 +1,109 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
-    "/docs/": [
+  "/docs/": [
+    {
+      text: "快速开始",
+      icon: "streamline-sharp:startup-solid",
+      prefix: "rc_quick_start/",
+      children: [
         {
-            text: "快速开始",
-            icon: "streamline-sharp:startup-solid",
-            prefix: "rc_quick_start/",
-            children: [
-                {
-                    text: "RCode简介",
-                    icon: "fluent-mdl2:web-environment",
-                    link: "intro.md",
-                },
-                {
-                    text: "充值与套餐",
-                    icon: "fluent-mdl2:money",
-                    link: "recharge.md",
-                },
-                {
-                    text: "ApiKey 管理",
-                    icon: "mdi:key",
-                    link: "apikey.md",
-                },
-                {
-                    text: "渠道与模型",
-                    icon: "carbon:model-alt",
-                    link: "models.md",
-                },
-                {
-                    text: "通用步骤 (一定要看)",
-                    icon: "hugeicons:configuration-01",
-                    link: "normal.md",
-                },
-            ],
+          text: "RCode简介",
+          icon: "fluent-mdl2:web-environment",
+          link: "intro.md",
         },
         {
-            text: "CLI 配置",
-            icon: "streamline:command",
-            prefix: "rc_cli_config/",
-            children: [
-                {
-                    text: "CC-Switch配置",
-                    icon: "vaadin:tools",
-                    link: "ccs.md",
-                },
-                {
-                    text: "Claude Code配置",
-                    icon: "material-icon-theme:claude",
-                    link: "claudecode.md",
-                },
-                {
-                    text: "Codex配置",
-                    icon: "hugeicons:chat-gpt",
-                    link: "codex.md",
-                },
-                {
-                    text: "Gemini配置",
-                    icon: "vscode-icons:file-type-gemini",
-                    link: "gemini.md",
-                }
-            ],
+          text: "充值与套餐",
+          icon: "fluent-mdl2:money",
+          link: "recharge.md",
         },
         {
-            text: "第三方使用",
-            icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
-            prefix: "rc_extension/",
-            children: [
-                {
-                    text: "Curl调用示例",
-                    icon: "si:pull-request-fill",
-                    link: "curl.md",
-                },
-                {
-                    text: "OpenCode",
-                    icon: "mynaui:code-waves",
-                    link: "opencode.md",
-                },
-                {
-                    text: "WSL 配置",
-                    icon: "mynaui:letter-w",
-                    link: "wsl.md",
-                }
-            ],
+          text: "ApiKey 管理",
+          icon: "mdi:key",
+          link: "apikey.md",
         },
         {
-            text: "常见问题",
-            icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
-            prefix: "rc_questions/",
-            children: [
-                {
-                    text: "Codex",
-                    icon: "hugeicons:chat-gpt",
-                    link: "codex.md",
-                }
-            ],
+          text: "渠道与模型",
+          icon: "carbon:model-alt",
+          link: "models.md",
         },
-    ],
+        {
+          text: "通用步骤 (一定要看)",
+          icon: "hugeicons:configuration-01",
+          link: "normal.md",
+        },
+      ],
+    },
+    {
+      text: "CLI 配置",
+      icon: "streamline:command",
+      prefix: "rc_cli_config/",
+      children: [
+        {
+          text: "CC-Switch配置",
+          icon: "vaadin:tools",
+          link: "ccs.md",
+        },
+        {
+          text: "Claude Code配置",
+          icon: "material-icon-theme:claude",
+          link: "claudecode.md",
+        },
+        {
+          text: "Codex配置",
+          icon: "hugeicons:chat-gpt",
+          link: "codex.md",
+        },
+        {
+          text: "Gemini配置",
+          icon: "vscode-icons:file-type-gemini",
+          link: "gemini.md",
+        },
+      ],
+    },
+    {
+      text: "第三方使用",
+      icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
+      prefix: "rc_extension/",
+      children: [
+        {
+          text: "Curl调用示例",
+          icon: "si:pull-request-fill",
+          link: "curl.md",
+        },
+        {
+          text: "OpenCode",
+          icon: "/opencode.jpg",
+          link: "opencode.md",
+        },
+        {
+          text: "Kilocode",
+          icon: "/kilocode.gif",
+          link: "kilocode.md",
+        },
+        {
+          text: "Zed",
+          icon: "/zed-logo.svg",
+          link: "zed.md",
+        },
+        {
+          text: "WSL 配置",
+          icon: "/wsl2-logo.svg",
+          link: "wsl.md",
+        },
+      ],
+    },
+    {
+      text: "常见问题",
+      icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
+      prefix: "rc_questions/",
+      children: [
+        {
+          text: "Codex",
+          icon: "hugeicons:chat-gpt",
+          link: "codex.md",
+        },
+      ],
+    },
+  ],
 });
