@@ -44,12 +44,12 @@ opencode
 @tab Windows
 CMD命令行：
 ```bash
-start "" "%USERPROFILE%\.codex"
+start "" "%USERPROFILE%\.config\opencode"
 ```
 
 @tab MacOS
 ```bash
-open "$HOME/.codex"
+open "$HOME/.config/opencode"
 ```
 :::
 
