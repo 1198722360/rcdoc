@@ -15,7 +15,7 @@ footer: false
 如果你还没有装 WSL，先看 [WSL 配置](/docs/rc_extension/wsl.html)。
 :::
 
-这一页只讲本地命令行直接运行 `hermes` 的用法，不展开 Feishu、Telegram、托管部署这些分支。
+这一页只讲本地命令行直接运行 `hermes` 的用法， Feishu、Telegram、托管部署这些内容可以让hermes本身帮你配置。
 
 ## 第一步：安装 Hermes
 
@@ -102,7 +102,7 @@ OPENAI_API_KEY=你的 Right Code Key
 
 如果你还没有 Key，可以先看 [ApiKey 管理](/docs/rc_quick_start/apikey.html)。
 
-## 第三步：打上缓存兼容补丁
+## 第三步：打上缓存兼容补丁（暂时只支持GPT Codex组）
 
 这一步可以简单理解成：
 把 Hermes 调整得更适合 Right Code 这类 `/codex` 接口。
@@ -118,7 +118,7 @@ bash scripts/install_skill.sh ~/.hermes
 
 这里不用把它想得太复杂。你只要知道：
 
-1. 有些中转地址不只看你发了什么内容，还会看整个请求长什么样。
+1. 中转地址不只看你发了什么内容，还会看整个请求长什么样，而hermes没有配置好这些，缓存命中很低，额度就会用的很快。
 2. 这个补丁就是把这部分也补齐。
 3. 它不是“装完一定省多少”，只是把缓存兼容这件事补上。
 
@@ -132,8 +132,11 @@ hermes
 
 进去以后，先问一个简单问题，比如：
 
+<img width="1876" height="950" alt="image" src="https://github.com/user-attachments/assets/e988357c-f0e7-46ee-8959-f4c505ef3b10" />
+
+
 ```text
-请用三句话介绍一下 Right Code 是做什么的。
+请用三句话介绍一下hermes 是做什么的。
 ```
 
 只要它能正常返回内容，这一轮就算已经跑通。
