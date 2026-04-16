@@ -73,12 +73,15 @@ open "$HOME/.hermes"
 xdg-open "$HOME/.hermes"
 ```
 
-如果这条命令没有反应，也可以直接用文件管理器手动打开 `~/.hermes`。
-<img width="848" height="551" alt="image" src="https://github.com/user-attachments/assets/269b9fdf-afe6-400a-8a62-5dd74ea63b13" />
+
 
 :::
 
-先打开 `config.yaml`，把模型这一段改成下面这样：
+如果这条命令没有反应，也可以直接用文件管理器手动打开 `~/.hermes`。
+<img width="848" height="551" alt="image" src="https://github.com/user-attachments/assets/269b9fdf-afe6-400a-8a62-5dd74ea63b13" />
+
+
+然后先打开 `config.yaml`，把模型这一段改成下面这样：
 
 ```yaml
 model:
