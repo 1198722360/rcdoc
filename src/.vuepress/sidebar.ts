@@ -87,6 +87,11 @@ export default sidebar({
           link: "zed.md",
         },
         {
+          text: "Hermes Agent",
+          icon: "streamline:command",
+          link: "hermes.md",
+        },
+        {
           text: "WSL 配置",
           icon: "/wsl2-logo.svg",
           link: "wsl.md",
