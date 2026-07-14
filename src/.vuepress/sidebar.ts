@@ -60,6 +60,11 @@ export default sidebar({
           link: "gemini.md",
         },
         {
+          text: "Grok配置",
+          icon: "ri:robot-2-fill",
+          link: "grok.md",
+        },
+        {
           text: "WSL 配置",
           icon: "/wsl2-logo.svg",
           link: "wsl.md",
