@@ -60,7 +60,7 @@ open "$HOME/.codex"
 
 ```json
 model_provider = "rightcode"
-model = "gpt-5.5"
+model = "gpt-5.6-sol"
 model_reasoning_effort = "xhigh"
 network_access = "enabled"
 disable_response_storage = true
@@ -90,9 +90,9 @@ requires_openai_auth = true
 
 :::warning CLI 模型提醒
 - CLI 版本启动后，尽量不要在会话里切换模型。
-- 如果你切换过模型，需要重新用下面命令启动，才会继续使用 `gpt-5.3-codex`：
+- 如果你切换过模型，需要重新用下面命令启动，才会继续使用 `gpt-5.6-sol`：
 ```bash
-codex -m gpt-5.3-codex -c model_reasoning_effort="xhigh"
+codex -m gpt-5.6-sol -c model_reasoning_effort="xhigh"
 ```
 :::
 

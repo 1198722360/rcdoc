@@ -34,9 +34,10 @@ open "$HOME/.claude"
 :::
 
 ::: important
-**我们的Claude Code目前有两个渠道：**
+**我们的Claude Code目前有三个渠道：**
 
  - CC官渠：`https://rightapi.ai/claude`
+ - CC-Sale渠道：`https://rightapi.ai/claude-sale`
  - AWSQ逆向渠道：`https://rightapi.ai/claude-aws`
 
 :::

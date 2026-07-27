@@ -55,11 +55,6 @@ export default sidebar({
           link: "codex.md",
         },
         {
-          text: "Gemini配置",
-          icon: "vscode-icons:file-type-gemini",
-          link: "gemini.md",
-        },
-        {
           text: "Grok配置",
           icon: "ri:robot-2-fill",
           link: "grok.md",
