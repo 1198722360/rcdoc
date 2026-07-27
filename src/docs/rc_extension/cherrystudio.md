@@ -29,7 +29,7 @@ CherryStudio 支持 OpenAI 兼容接口，可以直接接入 RightCode 的 Codex
 3. 进入刚创建的 `RightCode` 提供商，填写 API 配置。
 
 - `API 密钥`：填写你的 RightCode ApiKey
-- `API 地址`：`https://www.rightapi.ai/codex-pro/v1`
+- `API 地址`：`https://www.rightapi.ai/codex/v1`
 
 ![配置 RightCode 提供商](/assets/image/rc_extension/cherrystudio/provider-config.png)
 
