@@ -85,93 +85,18 @@ footer: false
 ## QQ群
 
 <div class="qq-group-grid">
-  <div class="qq-group-card is-full">
-    <div class="qq-group-icon-wrap">
-      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
-    </div>
-    <div class="qq-group-content">
-      <div class="qq-group-header">
-        <span class="qq-group-name">一群</span>
-        <span class="qq-group-status">已满</span>
-      </div>
-      <div class="qq-group-number">741292866</div>
-    </div>
-    <button class="qq-group-copy" @click="copyText('741292866', $event)">
-      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
-    </button>
-  </div>
-  <div class="qq-group-card is-full">
-    <div class="qq-group-icon-wrap">
-      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
-    </div>
-    <div class="qq-group-content">
-      <div class="qq-group-header">
-        <span class="qq-group-name">二群</span>
-        <span class="qq-group-status">已满</span>
-      </div>
-      <div class="qq-group-number">1083110871</div>
-    </div>
-    <button class="qq-group-copy" @click="copyText('1083110871', $event)">
-      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
-    </button>
-  </div>
-  <div class="qq-group-card is-full">
-    <div class="qq-group-icon-wrap">
-      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
-    </div>
-    <div class="qq-group-content">
-      <div class="qq-group-header">
-        <span class="qq-group-name">三群</span>
-        <span class="qq-group-status">已满</span>
-      </div>
-      <div class="qq-group-number">1085441389</div>
-    </div>
-    <button class="qq-group-copy" @click="copyText('1085441389', $event)">
-      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
-    </button>
-  </div>
-  <div class="qq-group-card is-full">
-    <div class="qq-group-icon-wrap">
-      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
-    </div>
-    <div class="qq-group-content">
-      <div class="qq-group-header">
-        <span class="qq-group-name">四群</span>
-        <span class="qq-group-status">已满</span>
-      </div>
-      <div class="qq-group-number">1083880363</div>
-    </div>
-    <button class="qq-group-copy" @click="copyText('1083880363', $event)">
-      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
-    </button>
-  </div>
-  <div class="qq-group-card is-full">
-    <div class="qq-group-icon-wrap">
-      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
-    </div>
-    <div class="qq-group-content">
-      <div class="qq-group-header">
-        <span class="qq-group-name">五群</span>
-        <span class="qq-group-status">已满</span>
-      </div>
-      <div class="qq-group-number">1067908656</div>
-    </div>
-    <button class="qq-group-copy" @click="copyText('1067908656', $event)">
-      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
-    </button>
-  </div>
   <div class="qq-group-card is-open">
     <div class="qq-group-icon-wrap">
       <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
     </div>
     <div class="qq-group-content">
       <div class="qq-group-header">
-        <span class="qq-group-name">六群</span>
+        <span class="qq-group-name">七群</span>
         <span class="qq-group-status is-open">未满</span>
       </div>
-      <div class="qq-group-number">296525056</div>
+      <div class="qq-group-number">849306691</div>
     </div>
-    <button class="qq-group-copy" @click="copyText('296525056', $event)">
+    <button class="qq-group-copy" @click="copyText('849306691', $event)">
       <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
     </button>
   </div>
