@@ -9,7 +9,7 @@ footer: false
 
 OpenAI Images 兼容接口，异步文生图。
 
-`POST https://www.right.codes/draw/v1/images/generations`
+`POST https://www.rightapi.ai/draw/v1/images/generations`
 
 > 鉴权头：`Authorization: Bearer sk-xxxxx`，请求体固定带 `"async": true`。
 
@@ -20,7 +20,7 @@ OpenAI Images 兼容接口，异步文生图。
 @tab 文生图
 
 ```bash
-curl -sS -X POST "https://www.right.codes/draw/v1/images/generations" \
+curl -sS -X POST "https://www.rightapi.ai/draw/v1/images/generations" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -36,7 +36,7 @@ curl -sS -X POST "https://www.right.codes/draw/v1/images/generations" \
 @tab 带参考图
 
 ```bash
-curl -sS -X POST "https://www.right.codes/draw/v1/images/generations" \
+curl -sS -X POST "https://www.rightapi.ai/draw/v1/images/generations" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{

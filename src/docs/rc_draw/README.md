@@ -13,8 +13,8 @@ Right Code 绘图接口统一走**异步模式**：提交任务拿到 `task_id`�
 
 | 项 | 值 |
 | --- | --- |
-| 绘图基础地址 | `https://www.right.codes/draw` |
-| 任务查询地址 | `https://www.right.codes/v1/tasks/{task_id}`（站点级，不带 `/draw`） |
+| 绘图基础地址 | `https://www.rightapi.ai/draw` |
+| 任务查询地址 | `https://www.rightapi.ai/v1/tasks/{task_id}`（站点级，不带 `/draw`） |
 | 鉴权头 | `Authorization: Bearer sk-xxxxx` |
 
 ## 异步流程

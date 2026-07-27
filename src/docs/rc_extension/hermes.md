@@ -84,7 +84,7 @@ xdg-open "$HOME/.hermes"
 model:
   provider: custom
   default: gpt-5.4-xhigh
-  base_url: https://right.codes/codex/v1
+  base_url: https://rightapi.ai/codex/v1
   api_mode: chat_completions
 ```
 

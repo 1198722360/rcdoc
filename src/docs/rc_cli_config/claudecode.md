@@ -36,8 +36,8 @@ open "$HOME/.claude"
 ::: important
 **我们的Claude Code目前有两个渠道：**
 
- - CC官渠：`https://right.codes/claude`
- - AWSQ逆向渠道：`https://right.codes/claude-aws`
+ - CC官渠：`https://rightapi.ai/claude`
+ - AWSQ逆向渠道：`https://rightapi.ai/claude-aws`
 
 :::
 
@@ -45,7 +45,7 @@ open "$HOME/.claude"
 {
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
-    "ANTHROPIC_BASE_URL": "https://right.codes/claude", 
+    "ANTHROPIC_BASE_URL": "https://rightapi.ai/claude", 
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   }
 }

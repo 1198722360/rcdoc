@@ -9,7 +9,7 @@ footer: false
 
 Gemini `generateContent` 兼容接口，异步生图。
 
-`POST https://www.right.codes/draw/v1beta/models/{model}:generateContent`
+`POST https://www.rightapi.ai/draw/v1beta/models/{model}:generateContent`
 
 > 鉴权头：`Authorization: Bearer sk-xxxxx`，请求体固定带 `"async": true`。
 
@@ -20,7 +20,7 @@ Gemini `generateContent` 兼容接口，异步生图。
 @tab 文生图
 
 ```bash
-curl -sS -X POST "https://www.right.codes/draw/v1beta/models/nano-banana-fast:generateContent" \
+curl -sS -X POST "https://www.rightapi.ai/draw/v1beta/models/nano-banana-fast:generateContent" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -42,7 +42,7 @@ curl -sS -X POST "https://www.right.codes/draw/v1beta/models/nano-banana-fast:ge
 @tab 带参考图
 
 ```bash
-curl -sS -X POST "https://www.right.codes/draw/v1beta/models/nano-banana-fast:generateContent" \
+curl -sS -X POST "https://www.rightapi.ai/draw/v1beta/models/nano-banana-fast:generateContent" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{

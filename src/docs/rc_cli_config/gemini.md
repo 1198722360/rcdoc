@@ -29,7 +29,7 @@ open "$HOME/.gemini"
 
 2. 手动创建 `.env` 文件，写入如下内容
 ```text
-GOOGLE_GEMINI_BASE_URL=https://right.codes/gemini
+GOOGLE_GEMINI_BASE_URL=https://rightapi.ai/gemini
 GEMINI_API_KEY=
 GEMINI_MODEL=gemini-3-pro-preview
 ```

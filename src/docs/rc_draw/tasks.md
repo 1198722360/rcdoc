@@ -9,14 +9,14 @@ footer: false
 
 轮询异步绘图任务，取最终结果。这是站点级接口，**不带** `/draw` 前缀。
 
-`GET https://www.right.codes/v1/tasks/{task_id}`
+`GET https://www.rightapi.ai/v1/tasks/{task_id}`
 
 > 鉴权头：`Authorization: Bearer sk-xxxxx`，只能查询自己 API Key 名下的任务。
 
 ## 请求示例
 
 ```bash
-curl -sS "https://www.right.codes/v1/tasks/{task_id}" \
+curl -sS "https://www.rightapi.ai/v1/tasks/{task_id}" \
   -H "Authorization: Bearer sk-xxxxx"
 ```
 

@@ -31,7 +31,7 @@
           <div class="group-actions">
             <div class="base-url" @click="copyBaseUrl(upstream.prefix, $event)">
               <iconify-icon icon="mdi:link-variant" width="16" height="16"></iconify-icon>
-              <span class="url-text">{{ 'https://right.codes' + upstream.prefix }}</span>
+              <span class="url-text">{{ 'https://rightapi.ai' + upstream.prefix }}</span>
               <iconify-icon icon="solar:copy-linear" width="14" height="14" class="copy-icon"></iconify-icon>
             </div>
           </div>
@@ -93,7 +93,7 @@ const toastType = ref('success');
 let toastTimer = null;
 
 // 开发环境使用代理，生产环境使用完整 URL
-const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://right.codes';
+const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://rightapi.ai';
 
 const fetchModels = async () => {
   loading.value = true;
@@ -122,7 +122,7 @@ const showCopyToast = (message, type = 'success') => {
 };
 
 const copyBaseUrl = async (prefix, event) => {
-  const url = 'https://right.codes' + prefix;
+  const url = 'https://rightapi.ai' + prefix;
   const triggerEl = event.currentTarget;
   try {
     await navigator.clipboard.writeText(url);
