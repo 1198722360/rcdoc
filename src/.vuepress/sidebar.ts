@@ -109,6 +109,11 @@ export default sidebar({
           link: "cherrystudio.md",
         },
         {
+          text: "Claude Desktop",
+          icon: "material-icon-theme:claude",
+          link: "claude-desktop.md",
+        },
+        {
           text: "OpenCode",
           icon: "/assets/icon/opencode/opencode.jpg",
           link: "opencode.md",
