@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="QuickConfiguration">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/.vuepress/public/assets/file/opencode/QuickConfiguration.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
