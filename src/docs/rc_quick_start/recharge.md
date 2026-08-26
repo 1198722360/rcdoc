@@ -21,42 +21,12 @@ footer: false
 
 <div class="pricing-notice">
   <iconify-icon icon="mdi:information-outline" width="20" height="20"></iconify-icon>
-  <span>本站各模型 input_tokens、output_tokens、cached_tokens 等价格均和官网同步</span>
+  <span>本站各模型 input_tokens、output_tokens、cached_tokens 等价格均和官网同步。下表直接读取 https://rightapi.ai 的公开价格，按渠道倍率算出实付价。</span>
 </div>
 
-<div class="pricing-section">
-  <h3 class="pricing-title">
-    <iconify-icon icon="mdi:scale-balance" width="24" height="24"></iconify-icon>
-    按量付费
-    <span class="pricing-subtitle">Codex + Claude Code</span>
-  </h3>
-  <div class="payg-container">
-    <div class="payg-rate">
-      <span class="rate-label">充值比例</span>
-      <span class="rate-value">1 元 = 站内 1$</span>
-    </div>
-    <div class="payg-cards">
-      <div class="payg-card codex">
-        <div class="payg-icon">
-          <iconify-icon icon="hugeicons:chat-gpt" width="40" height="40"></iconify-icon>
-        </div>
-        <div class="payg-info">
-          <span class="payg-name">Codex</span>
-          <span class="payg-price">0.2 元/美金</span>
-        </div>
-      </div>
-      <div class="payg-card claude">
-        <div class="payg-icon">
-          <iconify-icon icon="logos:claude-icon" width="36" height="36"></iconify-icon>
-        </div>
-        <div class="payg-info">
-          <span class="payg-name">Claude Max 号池</span>
-          <span class="payg-price">2 元/美金</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<ClientOnly>
+  <ChannelPricing />
+</ClientOnly>
 
 ## 并发规则
 
@@ -83,6 +53,10 @@ footer: false
   </div>
 </div>
 
+<script setup>
+import ChannelPricing from '@source/.vuepress/components/ChannelPricing.vue';
+</script>
+
 <style>
 .pricing-notice {
   display: flex;
@@ -95,31 +69,6 @@ footer: false
   border-left: 4px solid #3498db;
   color: #2980b9;
   font-size: 14px;
-}
-
-.pricing-section {
-  margin: 24px 0;
-}
-
-.pricing-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 16px;
-}
-
-.pricing-subtitle {
-  font-size: 13px;
-  font-weight: 600;
-  color: #b45309;
-  margin-left: 6px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #fff4e5 0%, #ffe1bd 100%);
-  border: 1px solid rgba(180, 83, 9, 0.2);
 }
 
 .rollover-info {
@@ -170,14 +119,6 @@ footer: false
   padding: 20px;
 }
 
-.rollover-example {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
 .concurrency-rules {
   display: grid;
   grid-template-columns: 1fr;
@@ -207,105 +148,15 @@ footer: false
   line-height: 1.6;
 }
 
-.payg-container {
-  background: linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%);
-  border-radius: 12px;
-  padding: 20px;
-}
-
-.payg-rate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px;
-  margin-bottom: 16px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.rate-label {
-  font-size: 14px;
-  color: #666;
-}
-
-.rate-value {
-  font-size: 16px;
-  font-weight: 600;
-  color: #3498db;
-}
-
-.payg-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-}
-
-.payg-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
-}
-
-.payg-card:hover {
-  transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.payg-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-}
-
-.payg-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.payg-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
-
-.payg-price {
-  font-size: 18px;
-  font-weight: 700;
-  color: #3498db;
-}
-
 [data-theme="dark"] .pricing-notice {
   background: linear-gradient(135deg, #1a3a4a 0%, #152d3a 100%);
   border-left-color: #3498db;
   color: #7ec8e3;
 }
 
-[data-theme="dark"] .pricing-title {
-  color: #e8e8e8;
-}
-
-[data-theme="dark"] .pricing-subtitle {
-  color: #ffc68a;
-  background: rgba(180, 83, 9, 0.24);
-  border-color: rgba(255, 198, 138, 0.24);
-}
-
 [data-theme="dark"] .rollover-info {
   background: rgba(45, 45, 45, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] .rollover-header {
@@ -326,35 +177,10 @@ footer: false
 
 [data-theme="dark"] .example-step {
   background: rgba(50, 50, 50, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-color: rgba(255, 255, 255, 0.05);
 }
 
-[data-theme="dark"] .step-day {
-  color: #888;
-}
-
 [data-theme="dark"] .step-desc {
-  color: #e8e8e8;
-}
-
-[data-theme="dark"] .payg-container {
-  background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
-}
-
-[data-theme="dark"] .payg-rate {
-  background: #2a2a2a;
-}
-
-[data-theme="dark"] .rate-label {
-  color: #aaa;
-}
-
-[data-theme="dark"] .payg-card {
-  background: #2a2a2a;
-}
-
-[data-theme="dark"] .payg-name {
   color: #e8e8e8;
 }
 </style>

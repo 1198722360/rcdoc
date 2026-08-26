@@ -12,10 +12,10 @@ footer: false
 :::important
 如果你是 Windows 用户，请先进入 WSL 再继续。Hermes 不支持 Windows 原生命令行安装。
 
-如果你还没有装 WSL，先看 [WSL 配置](/docs/rc_extension/wsl.html)。
+如果你还没有装 WSL，先看 [WSL 配置](/docs/rc_cli_config/wsl.html)。
 :::
 
-这一页只讲本地命令行直接运行 `hermes` 的用法， Feishu、Telegram、托管部署这些内容可以让hermes本身帮你配置。
+这一页只讲本地命令行直接运行 `hermes` 的用法。连到 Right Code 请用 [CC-Switch](/docs/rc_cli_config/ccs.html)，不用再手改 `config.yaml` 和 `.env`。Feishu、Telegram、托管部署这些内容可以让 Hermes 本身帮你配置。
 
 ## 第一步：安装 Hermes
 
@@ -47,69 +47,37 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 
 如果安装结束后当前终端里还找不到 `hermes` 命令，先把终端关掉再打开一次。
 
-## 第二步：把 Hermes 连到 Right Code
+![](/assets/image/rc_extension/hermes/hermes-install.jpg)
 
-先把 Hermes 的配置目录打开。你用自己顺手的编辑器改文件就行。
+## 第二步：用 CC-Switch 把 Hermes 连到 Right Code
 
-:::tabs
-@tab Windows + WSL
+还没装 CCS 的话，先看 [CC-Switch 配置](/docs/rc_cli_config/ccs.html)。
 
-先在 WSL 里进入配置目录，然后把它在 Windows 里打开：
+打开软件后，顶部先切到 **Hermes**，再点右上角加号添加 API。
 
-```bash
-cd ~/.hermes
-explorer.exe .
-```
+![](/assets/image/rc_extension/hermes/hermes-ccs-plus.jpg)
 
-@tab macOS
+预设供应商里选择 **自定义配置**。
 
-```bash
-open "$HOME/.hermes"
-```
+![](/assets/image/rc_extension/hermes/hermes-ccs-custom.jpg)
 
-@tab Linux
+按页面填好供应商名称、官网链接、API 模式、API 端点和 ApiKey，点击添加。API 模式选 `OpenAI Chat Completions`，官网链接和 API 端点都填 `https://www.rightapi.ai`。
 
-```bash
-xdg-open "$HOME/.hermes"
-```
+::: important
+创建 Key 时保持默认即可。`可用模型限制` 不要开。还不清楚两个开关干什么，看 [ApiKey 管理](/docs/rc_quick_start/apikey.html)。
 :::
 
-如果这条命令没有反应，也可以直接用文件管理器手动打开 `~/.hermes`。
-<img width="848" height="551" alt="image" src="https://github.com/user-attachments/assets/269b9fdf-afe6-400a-8a62-5dd74ea63b13" />
+![](/assets/image/rc_extension/hermes/hermes-ccs-form.jpg)
 
+启用后，到命令行里运行 `hermes`。能看到模型，就说明已经配好了。
 
-然后先打开 `config.yaml`，把模型这一段改成下面这样：
+![](/assets/image/rc_extension/hermes/hermes-cli-start.jpg)
 
-```yaml
-model:
-  provider: custom
-  default: gpt-5.4-xhigh
-  base_url: https://rightapi.ai/codex/v1
-  api_mode: chat_completions
-```
+## 第三步（可选）：打上缓存兼容补丁
 
-<img width="412" height="141" alt="image" src="https://github.com/user-attachments/assets/9b0e4e4f-b22a-4df9-8768-068cd5ccbe03" />
+这一步不是主流程。只有你主要走 GPT Codex 组、又很在意缓存命中时才需要。
 
-可以直接这样理解：
-
-1. `base_url` 就是告诉 Hermes 以后往哪条接口地址发请求。
-2. `default` 就是默认先用哪个模型。
-3. `api_mode` 先照着写就行，不需要先研究它背后的协议细节。
-
-然后再打开 `~/.hermes/.env`，填入你自己的 Right Code Key：
-
-```bash
-OPENAI_API_KEY=你的 Right Code Key
-```
-
-如果这个文件里已经有 `OPENAI_API_KEY`，就把它改成你这次要用的 Key。
-
-如果你还没有 Key，可以先看 [ApiKey 管理](/docs/rc_quick_start/apikey.html)。
-
-## 第三步：打上缓存兼容补丁（暂时只支持GPT Codex组）
-
-这一步可以简单理解成：
-把 Hermes 调整得更适合 Right Code 这类 `/codex` 接口。
+CCS 只负责写配置，不会自动打这个补丁。补丁的作用是：把 Hermes 调整得更适合 Right Code 的 `/codex` 接口，让缓存命中接近原生 Codex。
 
 先找一个你平时放项目的目录，然后运行：
 
@@ -122,27 +90,22 @@ bash scripts/install_skill.sh ~/.hermes
 
 这里不用把它想得太复杂。你只要知道：
 
-1. 中转地址不只看你发了什么内容，还会看整个请求长什么样，而hermes没有配置好这些，缓存命中很低，额度就会用的很快。
-2. 这个补丁就是把这部分也补齐。让其达到和原生Codex一样的缓存命中水平
+1. 中转地址不只看你发了什么内容，还会看整个请求长什么样，而 Hermes 没有配置好这些，缓存命中很低，额度就会用得很快。
+2. 这个补丁就是把这部分也补齐，让其达到和原生 Codex 一样的缓存命中水平。
+
+Hermes 更新后，补丁有可能要重新打一遍；到补丁仓库 README 看最新说明即可。
 
 ## 第四步：启动 Hermes，做一次最小可用确认
 
-现在直接启动：
-
-```bash
-hermes
-```
-
-进去以后，先问一个简单问题，比如：
-
-<img width="1876" height="950" alt="image" src="https://github.com/user-attachments/assets/e988357c-f0e7-46ee-8959-f4c505ef3b10" />
-
+`hermes` 启动进去以后，先问一个简单问题，比如：
 
 ```text
-请用三句话介绍一下hermes 是做什么的。
+请用三句话介绍一下 hermes 是做什么的。
 ```
 
 只要它能正常返回内容，这一轮就算已经跑通。
+
+![](/assets/image/rc_extension/hermes/hermes-chat.jpg)
 
 如果这一步报的是 Key 错误、地址错误，或者模型不存在，回到第二步重新检查就行。
 
@@ -155,8 +118,6 @@ hermes
 ## 结束
 
 现在你已经可以继续正常使用 Hermes + Right Code 了。
-
-如果后面 Hermes 更新了，补丁有可能要重新打一遍；到补丁仓库 README 看最新说明即可。
 
 需要继续看 Key 或模型信息的话，可以接着看：
 

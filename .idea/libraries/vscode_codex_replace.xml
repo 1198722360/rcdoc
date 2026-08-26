@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vscode-codex-replace">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/.vuepress/public/assets/file/codex/vscode-codex-replace.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
