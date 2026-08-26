@@ -53,21 +53,25 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 
 还没装 CCS 的话，先看 [CC-Switch 配置](/docs/rc_cli_config/ccs.html)。
 
-1. 打开 CC-Switch，顶部切到 **Hermes**
-2. 点击添加供应商
-3. 预设选择 `RightCode`
-4. 填入你在后台生成的 ApiKey，然后添加
-5. 主界面确认当前启用的是这套配置
+打开软件后，顶部先切到 **Hermes**，再点右上角加号添加 API。
+
+![](/assets/image/rc_extension/hermes/hermes-ccs-plus.jpg)
+
+预设供应商里选择 **自定义配置**。
+
+![](/assets/image/rc_extension/hermes/hermes-ccs-custom.jpg)
+
+按页面填好供应商名称、官网链接、API 模式、API 端点和 ApiKey，点击添加。API 模式选 `OpenAI Chat Completions`，官网链接和 API 端点都填 `https://www.rightapi.ai`。
 
 ::: important
 创建 Key 时保持默认即可。`可用模型限制` 不要开。还不清楚两个开关干什么，看 [ApiKey 管理](/docs/rc_quick_start/apikey.html)。
 :::
 
-![](/assets/image/rc_extension/hermes/hermes-ccs-tab.jpg)
+![](/assets/image/rc_extension/hermes/hermes-ccs-form.jpg)
 
-![](/assets/image/rc_extension/hermes/hermes-ccs-add.jpg)
+启用后，到命令行里运行 `hermes`。能看到模型，就说明已经配好了。
 
-![](/assets/image/rc_extension/hermes/hermes-ccs-active.jpg)
+![](/assets/image/rc_extension/hermes/hermes-cli-start.jpg)
 
 ## 第三步（可选）：打上缓存兼容补丁
 
@@ -93,13 +97,7 @@ Hermes 更新后，补丁有可能要重新打一遍；到补丁仓库 README �
 
 ## 第四步：启动 Hermes，做一次最小可用确认
 
-现在直接启动：
-
-```bash
-hermes
-```
-
-进去以后，先问一个简单问题，比如：
+`hermes` 启动进去以后，先问一个简单问题，比如：
 
 ```text
 请用三句话介绍一下 hermes 是做什么的。

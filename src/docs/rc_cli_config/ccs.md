@@ -79,7 +79,7 @@ OpenCode、Hermes 也请用 CCS 配，教程分别在 [OpenCode](/docs/rc_extens
 
 ### 第一步：打开 Codex 增强，不要开本地路由
 
-先进入 **设置 → 通用**，把 **Codex 增强功能** 打开。
+先进入设置里的 **Codex 应用增强**，把 **非接管切换时保留官方登录** 和 **统一 Codex 会话历史** 打开。
 
 ![](/assets/image/rc_quick_start/ccs-cx-enhance.jpg)
 
@@ -91,19 +91,18 @@ Right Code 的 Codex 本身就是原生 Responses 接口，不需要 CCS 再做�
 - 配 Right Code 时，把本地路由保持关闭
 :::
 
-![](/assets/image/rc_quick_start/ccs-cx-no-route.jpg)
-
 ### 第二步：选中 Codex，添加供应商
 
 顶部切到 **Codex**，再点添加供应商。
 
 ![](/assets/image/rc_quick_start/ccs-cx-add.jpg)
 
-### 第三步：选 Right Code 预设，填入 Key
+### 第三步：填入 Key 和请求地址
 
-- 在 `预设供应商` 中选择 `Right Code`
-- `API Key` 填写后台生成的密钥
-- 请求地址使用：`https://rightapi.ai/codex/v1`
+- 供应商名称随便起
+- `API Key` 填写你在后台生成的密钥
+- `API 请求地址` 填兼容 OpenAI Response 格式的端点：`https://www.rightapi.ai/openai`
+- 默认模型填 `gpt-5.4`
 - 右下角点击添加
 
 ![](/assets/image/rc_quick_start/ccs-cx-preset.jpg)
@@ -119,3 +118,22 @@ Right Code 的 Codex 本身就是原生 Responses 接口，不需要 CCS 再做�
 打开终端，运行 `codex`，随便问一句。
 
 ![](/assets/image/rc_quick_start/rc-999.webp)
+
+## 配置 Grok Build
+
+### 第一步：选中 Grok，添加供应商
+
+打开软件，顶部先切到 **Grok**，再点添加供应商。
+
+### 第二步：选 xAI (Grok) 预设，填入 Key
+
+- 在上方 `预设供应商` 中选择 `xAI (Grok)`
+- 请求地址改为：`https://rightapi.ai/grok/v1`
+- `API Key` 填写后台生成的密钥
+- 右下角点击添加
+
+![](/assets/image/rc_quick_start/ccs-grok-add.jpg)
+
+### 第三步：终端测一下
+
+打开终端，运行 `grok`，随便问一句。

@@ -52,6 +52,17 @@ grok --version
 
 ![](/assets/image/rc_quick_start/rc-grok-install.jpg)
 
+### 用 CC-Switch 配置 Grok
+
+打开 CC-Switch，顶部切到 **Grok**，再点添加供应商。
+
+- 在上方预设中选择 `xAI (Grok)`
+- 请求地址改为：`https://rightapi.ai/grok/v1`
+- `API Key` 填写你在后台生成的密钥
+- 右下角点击添加
+
+![](/assets/image/rc_quick_start/ccs-grok-add.jpg)
+
 ### 测试运行
 
 > **打开三个终端，分别运行 Claude Code、Codex、Grok Build。如果有界面，说明没有问题了，不需要管其他的报错！**
@@ -69,8 +80,6 @@ grok
 ```
 
 ![](/assets/image/rc_quick_start/rc-6.jpg)
-
-![](/assets/image/rc_quick_start/rc-7.jpg)
 
 ### 常见问题
 

@@ -13,7 +13,7 @@ footer: false
 
 3. 创建时先看清下面两个开关。**绝大多数人保持默认即可：不要开「可用模型限制」，打开「允许使用余额」。**
 
-![](/assets/image/rc_quick_start/rc-2.webp)
+![](/assets/image/rc_quick_start/rc-2.jpg)
 
 ## 先记住一件事：选模型不在这里
 
