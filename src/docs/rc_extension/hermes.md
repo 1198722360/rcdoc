@@ -57,7 +57,7 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 
 ![](/assets/image/rc_extension/hermes/hermes-ccs-plus.jpg)
 
-预设供应商里选择 **自定义配置**。
+预设供应商里选择 **Nous Research**（Hermes）。
 
 ![](/assets/image/rc_extension/hermes/hermes-ccs-custom.jpg)
 
