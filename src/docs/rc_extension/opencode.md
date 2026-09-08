@@ -5,60 +5,50 @@ order: 1
 footer: false
 ---
 
-## 手把手教你配置 OpenCode
+## 手把手教你用 CC-Switch 配置 OpenCode
 
-1. 下载 [OpenCode（带御三家 + 缓存）](/assets/file/opencode/QuickConfiguration.zip) 压缩包，解压后得到以下文件
+OpenCode 现在请直接用 [CC-Switch](/docs/rc_cli_config/ccs.html) 配，不用再下载旧的 zip、手改 `opencode.json`。
 
-![](/assets/image/rc_extension/opencode/rc-01.webp)
+### 第一步：先装好 OpenCode
 
-2. 打开 `opencode.json` 文件，分别在 `Gemini`、`Claude`、`GPT` 部分配置相应的 API Key，并保存
+如果你是初次配置，先在终端安装并运行一次：
 
-::: important
-注意查看 [ApiKey 生成](/docs/rc_quick_start/apikey.html#如何生成apikey) 教程，要生成正确渠道的 Key：`可用渠道` 记得选择你要使用的渠道，`可用模型` 保持默认即可。
-:::
-
-![Gemini配置](/assets/image/rc_extension/opencode/rc-02.webp)
-
-![Claude配置](/assets/image/rc_extension/opencode/rc-03.webp)
-
-![GPT配置](/assets/image/rc_extension/opencode/rc-04.webp)
-
-3. 找到 OpenCode 的配置文件夹
-
-:::important
-如果你是初次配置，请先在终端安装 OpenCode，并运行一次：
 ```bash
 npm i -g opencode-ai
 ```
 
-运行OpenCode
 ```bash
 opencode
 ```
+
+![](/assets/image/rc_extension/opencode/oc-install.jpg)
+
+### 第二步：在 OpenCode 里添加凭证
+
+输入 `provider_id`，以及你自己使用的中转站 ApiKey。
+
+![](/assets/image/rc_extension/opencode/oc-cli-credential.jpg)
+
+### 第三步：打开 CC-Switch，切到 OpenCode
+
+还没装 CCS 的话，先看 [CC-Switch 配置](/docs/rc_cli_config/ccs.html) 完成下载安装。
+
+打开软件后，顶部先切到 **OpenCode**，再点右上角加号。
+
+![](/assets/image/rc_extension/opencode/oc-ccs-plus.jpg)
+
+### 第四步：添加供应商
+
+供应商标识必须和刚才在命令行里填的 `provider_id` 一样，再填入你在后台生成的 ApiKey，点击添加。
+
+::: important
+创建 Key 时保持默认即可。`可用模型限制` 不要开——选模型是在 OpenCode 里选，不是在创建 Key 的时候选。还不清楚的话看 [ApiKey 管理](/docs/rc_quick_start/apikey.html)。
 :::
 
-> 首先打开你的终端程序，不管你是 Windows 还是 macOS 系统  
-> 然后根据系统，运行下面的命令，打开 OpenCode 的配置文件夹
+![](/assets/image/rc_extension/opencode/oc-ccs-provider-id.jpg)
 
-:::tabs
-@tab Windows
-CMD命令行：
-```bash
-start "" "%USERPROFILE%\.config\opencode"
-```
+### 第五步：重启终端，启动 OpenCode
 
-@tab MacOS
-```bash
-open "$HOME/.config/opencode"
-```
-:::
+重启命令行，再运行 `opencode`，能看到模型就说明配置成功。
 
-![](/assets/image/rc_extension/opencode/rc-05.webp)
-
-4. 将刚才你修改好的 `opencode.json` 与 `plugins` 目录复制到 OpenCode 的配置文件夹
-
-![](/assets/image/rc_extension/opencode/rc-06.webp)
-
-5. 在终端运行 `opencode`，再使用 `/models` 命令查看配置是否成功
-
-![](/assets/image/rc_extension/opencode/rc-07.webp)
+![](/assets/image/rc_extension/opencode/oc-restart-models.jpg)
