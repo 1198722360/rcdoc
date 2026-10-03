@@ -91,12 +91,12 @@ footer: false
     </div>
     <div class="qq-group-content">
       <div class="qq-group-header">
-        <span class="qq-group-name">七群</span>
+        <span class="qq-group-name">八群</span>
         <span class="qq-group-status is-open">未满</span>
       </div>
-      <div class="qq-group-number">849306691</div>
+      <div class="qq-group-number">1126968133</div>
     </div>
-    <button class="qq-group-copy" @click="copyText('849306691', $event)">
+    <button class="qq-group-copy" @click="copyText('1126968133', $event)">
       <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
     </button>
   </div>

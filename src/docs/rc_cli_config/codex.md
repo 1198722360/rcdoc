@@ -52,11 +52,8 @@ open "$HOME/.codex"
 
 ![](/assets/image/rc_cli_config/rc-3.webp)
 
-3. 手动创建 `config.toml` 与 `auth.json` 文件，写入如下内容
+3. 手动创建 `config.toml` 文件，写入如下内容
 
-:::tabs
-
-@tab config.toml
 
 ```json
 model_provider = "rightcode"
@@ -66,35 +63,24 @@ network_access = "enabled"
 disable_response_storage = true
 windows_wsl_setup_acknowledged = true
 model_verbosity = "high"
+personality = "pragmatic"
+plan_mode_reasoning_effort = "xhigh"
+service_tier = "fast"
+
+[model_providers]
 
 [model_providers.rightcode]
 name = "rightcode"
-base_url = "https://rightapi.ai/codex/v1"
+base_url = "https://rightapi.ai/v1"
 wire_api = "responses"
-requires_openai_auth = true
+requires_openai_auth = false
+experimental_bearer_token = "sk-"
 ```
 
-@tab auth.json
 
-```json
-{
-  "OPENAI_API_KEY": ""
-}
-```
-
-:::
-
-4. 在 `auth.json` 配置文件中的 `OPENAI_API_KEY` 部分填入你在后台生成的ApiKey，然后保存
+4. 在 `experimental_bearer_token` 部分填入你在后台生成的ApiKey，然后保存
 
 5. 在终端运行 `codex`，对话查看是否配置成功
-
-:::warning CLI 模型提醒
-- CLI 版本启动后，尽量不要在会话里切换模型。
-- 如果你切换过模型，需要重新用下面命令启动，才会继续使用 `gpt-5.6-sol`：
-```bash
-codex -m gpt-5.6-sol -c model_reasoning_effort="xhigh"
-```
-:::
 
 :::warning 配置生效提醒
 - 每次修改 `config.toml` 或 `auth.json` 后，都需要重启 `codex` 才会生效。

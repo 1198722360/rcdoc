@@ -9,9 +9,9 @@ footer: false
 
 在 Right Code 里，充值后通过余额按量付费。调用模型时，系统会根据模型价格从余额里扣费。
 
-1. 进入后台页面，点击左侧面板的 `获取订阅` 一栏
+1. 进入后台页面，点击左侧面板的 `在线充值` 一栏
 
-2. 如图所示，最上方为额度充值，选择需要充值的金额并完成支付
+2. 如图所示，输入充值额度，或选择合适的充值金额，进行充值
 
 3. 充值成功后，即可通过已配置的 ApiKey 按量调用可用模型
 
@@ -42,7 +42,7 @@ footer: false
         </div>
         <div class="payg-info">
           <span class="payg-name">Codex</span>
-          <span class="payg-price">0.2 元/美金</span>
+          <span class="payg-price">0.4 元/美金</span>
         </div>
       </div>
       <div class="payg-card claude">
@@ -73,11 +73,11 @@ footer: false
     <div class="rollover-example concurrency-rules">
       <div class="example-step">
         <span class="step-day">规则 1</span>
-        <span class="step-desc">余额按量付费并发统一是 <strong>50</strong>（不分模型）。</span>
+        <span class="step-desc">余额按量付费不限制并发。</span>
       </div>
       <div class="example-step">
         <span class="step-day">规则 2</span>
-        <span class="step-desc">如果 Key 不允许使用余额，或者余额不足，会提示 <strong>429</strong>。</span>
+        <span class="step-desc">如果 Key 不允许使用余额，或者余额不足，会提示 <strong>429</strong>，或直接提示余额不足。</span>
       </div>
     </div>
   </div>

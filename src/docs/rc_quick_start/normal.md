@@ -28,7 +28,6 @@ node -v
 ```bash
 npm i -g @anthropic-ai/claude-code@latest
 npm i -g @openai/codex@latest
-npm i -g @google/gemini-cli@latest
 
 ```
 
@@ -36,7 +35,7 @@ npm i -g @google/gemini-cli@latest
 
 ### 测试运行
 
-> **打开三个终端，分别运行Claude Code、Codex、Gemini的CLI，如果有界面，说明没有问题了，不需要管其他的报错！**
+> **打开三个终端，分别运行Claude Code、Codex的CLI，如果有界面，说明没有问题了，不需要管其他的报错！**
 
 ![](/assets/image/rc_quick_start/rc-6.webp)
 

@@ -51,7 +51,7 @@ default = "grok-4.5"
 web_search = "grok-4.5"
 
 [endpoints]
-models_base_url = "https://rightapi.ai/grok/v1"
+models_base_url = "https://rightapi.ai/v1"
 
 [model."grok-4.5"]
 model = "grok-4.5"
@@ -62,17 +62,7 @@ api_backend = "responses"
 context_window = 1000000
 ```
 
-:::important
-- `models_base_url` 是模型网关的统一入口地址，固定填写 `https://rightapi.ai/grok/v1` 即可
-- `api_backend = "responses"` 表示该模型走 Responses API，与官方默认示例保持一致
-- 不想把 ApiKey 明文写进配置文件的话，可以把 `api_key = "xxx"` 换成 `env_key = "RIGHTCODE_API_KEY"`（注意这里填的是环境变量的**名字**，不是密钥本身），然后在系统环境变量中设置 `RIGHTCODE_API_KEY` 的值
-:::
-
 4. 在 `api_key` 部分填入你在后台生成的ApiKey，替换掉里面的 `xxx`，然后保存
-
-:::warning
-请不要把包含真实ApiKey的配置文件截图、发到聊天记录、上传到公开仓库或提交到工单里，避免密钥泄露
-:::
 
 5. 在终端运行 `grok inspect`，检查配置是否被正确加载；也可以直接运行下面命令做一次简单测试：
 ```bash
