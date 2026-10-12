@@ -1,7 +1,7 @@
 ---
 title: 任务查询
 icon: material-symbols:manage-search
-order: 3
+order: 4
 footer: false
 ---
 
@@ -22,7 +22,8 @@ curl -sS "https://www.rightapi.ai/v1/tasks/{task_id}" \
 
 ## 响应
 
-结果按提交时的协议回译：Images 请求返回 Images 形状，Gemini 请求返回 Gemini 形状。
+- 处理中 / 失败：返回任务信息（含 `status`、`progress`、`error.message`）。
+- 完成：按提交时的协议回译形状返回——Images（含图片编辑）请求返回 `data[].url`，Gemini 请求返回 `candidates[].content.parts[].text`（里面的文本就是图片 URL）。
 
 ::::tabs
 
@@ -91,4 +92,5 @@ curl -sS "https://www.rightapi.ai/v1/tasks/{task_id}" \
 | --- | --- |
 | `queued` / `in_progress` | 任务排队或处理中，继续轮询 |
 | `completed` | 完成，从 `data` 或 `candidates` 取结果 |
+| `expired` / `canceled` | 任务过期或已取消，按失败处理 |
 | `failed` | 失败，见 `error.message` |

@@ -82,6 +82,11 @@ export default sidebar({
           link: "images-generations.md",
         },
         {
+          text: "图片编辑",
+          icon: "tabler:photo-edit",
+          link: "images-edits.md",
+        },
+        {
           text: "Gemini 生成",
           icon: "vscode-icons:file-type-gemini",
           link: "gemini.md",
