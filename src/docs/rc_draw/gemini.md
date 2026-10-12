@@ -1,17 +1,19 @@
 ---
 title: Gemini 生成
 icon: vscode-icons:file-type-gemini
-order: 2
+order: 3
 footer: false
 ---
 
 # Gemini 生成
 
-Gemini `generateContent` 兼容接口，异步生图。
+Gemini `generateContent` 兼容接口，异步文生图 / 带参考图生成（带参考图即图生图编辑）。
 
 `POST https://www.rightapi.ai/draw/v1beta/models/{model}:generateContent`
 
-> 鉴权头：`Authorization: Bearer sk-xxxxx`，请求体固定带 `"async": true`。
+> 鉴权头：`Authorization: Bearer sk-xxxxx`，也可用 Gemini 习惯的 `x-goog-api-key: sk-xxxxx`。
+> 请求体带 `"async": true` 立即返回任务号；不传则等待结果（默认最多 60 秒，超时同样返回任务号）。
+> 不支持 `:streamGenerateContent`（流式请求不进异步通道）。
 
 ## 请求示例
 
@@ -89,6 +91,7 @@ curl -sS -X POST "https://www.rightapi.ai/draw/v1beta/models/nano-banana-fast:ge
 | `{model}` | 是 | 路径里的模型名，如 `nano-banana-fast` |
 | `async` | 是 | 固定 `true`，立即返回任务号 |
 | `contents[].parts[].text` | 是 | 提示词文本，多个 part 会拼接 |
-| `contents[].parts[].inline_data` | 否 | 参考图，`mime_type` + base64 `data` |
-| `generationConfig.imageConfig.aspectRatio` | 否 | 比例 `1:1`、`16:9`、`9:16`、`4:3` |
-| `generationConfig.imageConfig.imageSize` | 否 | 仅 `1K`、`2K`、`4K` |
+| `contents[].parts[].inline_data` | 否 | 参考图，`mime_type` + base64 `data`；写多个 part 即多图参考 |
+| `generationConfig.imageConfig.aspectRatio` | 否 | 比例 `1:1`、`16:9`、`9:16`、`4:3`（SDK 形态） |
+| `generationConfig.imageConfig.imageSize` | 否 | 仅 `1K`、`2K`、`4K`（SDK 形态） |
+| `generationConfig.responseFormat.image.aspectRatio` | 否 | 比例的 REST 形态写法，与上面的 SDK 形态等价（`imageSize` 同理） |

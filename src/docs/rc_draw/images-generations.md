@@ -7,7 +7,9 @@ footer: false
 
 # 图片生成
 
-OpenAI Images 兼容接口，异步文生图。
+OpenAI Images 兼容接口，异步文生图 / 带参考图生成。
+
+> 需要**编辑已有图片**（图生图、换背景、多图融合）请看[图片编辑](./images-edits.md)。
 
 `POST https://www.rightapi.ai/draw/v1/images/generations`
 
@@ -75,5 +77,8 @@ curl -sS -X POST "https://www.rightapi.ai/draw/v1/images/generations" \
 | `async` | 是 | 固定 `true`，立即返回任务号 |
 | `n` | 否 | 生成数量，缺省 `1` |
 | `size` | 否 | 比例 `1:1`、`16:9`、`9:16`、`4:3`，或像素串 `1024x1024` |
+| `aspectRatio` | 否 | 比例，作用同 `size` 的比例写法；与 `size` 同时传时以 `size` 为准 |
 | `imageSize` | 否 | 仅 `1K`、`2K`、`4K`，nano-banana / gpt-image vip 模型可用 |
-| `image` | 否 | 参考图，data URL 数组（`data:image/png;base64,...`） |
+| `image` / `images` | 否 | 参考图，数组。元素支持 `data:` URL 或公网可访问的图片 URL；传多张即多图参考 |
+
+> 结果固定为图片 URL，`response_format` 不生效。
