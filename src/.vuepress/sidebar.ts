@@ -77,14 +77,9 @@ export default sidebar({
           link: "README.md",
         },
         {
-          text: "图片生成",
-          icon: "material-symbols:image",
-          link: "images-generations.md",
-        },
-        {
-          text: "图片编辑",
-          icon: "tabler:photo-edit",
-          link: "images-edits.md",
+          text: "OpenAI 生成",
+          icon: "hugeicons:chat-gpt",
+          link: "openai.md",
         },
         {
           text: "Gemini 生成",
