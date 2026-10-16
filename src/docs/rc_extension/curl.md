@@ -112,3 +112,27 @@ curl --location 'https://rightapi.ai/gemini/v1beta/models/gemini-3-pro-preview:s
     ]
 }'
 ```
+
+### Jev
+
+Jev 是决策模型，不生成文本：对 `state` 回答带类型的问题，返回概率和置信度。完整说明见 [Jev 决策模型](../rc_jev/README.md)。
+
+```bash
+curl https://www.rightapi.ai/v1/systemone \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {此处填写ApiKey}' \
+  -d '{
+    "model": "jev-1.14.0",
+    "state": "My card was charged twice for the same order.",
+    "questions": {
+      "is_billing": {
+        "type": "noul",
+        "instructions": "Is this message about billing?"
+      }
+    }
+  }'
+```
+
+::: info
+Jev 只支持 `Authorization: Bearer` 鉴权，请使用绑定了 Jev 渠道的 ApiKey；不支持流式。
+:::

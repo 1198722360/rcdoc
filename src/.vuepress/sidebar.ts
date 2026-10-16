@@ -94,6 +94,38 @@ export default sidebar({
       ],
     },
     {
+      text: "Jev 决策模型",
+      icon: "carbon:decision-tree",
+      prefix: "rc_jev/",
+      children: [
+        {
+          text: "模型总览",
+          icon: "carbon:decision-tree",
+          link: "README.md",
+        },
+        {
+          text: "接口参考",
+          icon: "mdi:api",
+          link: "api.md",
+        },
+        {
+          text: "图片输入与框选",
+          icon: "material-symbols:image-search",
+          link: "images.md",
+        },
+        {
+          text: "SDK 接入",
+          icon: "carbon:sdk",
+          link: "sdk.md",
+        },
+        {
+          text: "在线对话测试",
+          icon: "mdi:chat-processing-outline",
+          link: "chat.md",
+        },
+      ],
+    },
+    {
       text: "第三方使用",
       icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
       prefix: "rc_extension/",
