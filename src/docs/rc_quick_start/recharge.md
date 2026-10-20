@@ -1,11 +1,11 @@
 ---
 title: 充值
 icon: fluent-mdl2:money
-order: 2
+order: 3
 footer: false
 ---
 
-## 如何进行充值？
+## 一、如何进行充值？
 
 在 Right Code 里，充值后通过余额按量付费。调用模型时，系统会根据模型价格从余额里扣费。
 
@@ -13,11 +13,17 @@ footer: false
 
 2. 如图所示，输入充值额度，或选择合适的充值金额，进行充值
 
+:::important 需要发票请在下单前勾选
+如需开具国内发票，请在下单弹窗中**务必勾选 `需要国内发票`**（需额外支付 6% 手续费）。发票一般会在 **3 天左右** 发送到你提供的邮箱。
+
+不需要发票的话请不要勾选，以免多付手续费。
+:::
+
 3. 充值成功后，即可通过已配置的 ApiKey 按量调用可用模型
 
 ![](/assets/image/rc_quick_start/rc-1.webp)
 
-## 额度定价
+## 二、额度定价
 
 <div class="pricing-notice">
   <iconify-icon icon="mdi:information-outline" width="20" height="20"></iconify-icon>
@@ -58,7 +64,7 @@ footer: false
   </div>
 </div>
 
-## 并发规则
+## 三、并发规则
 
 <div class="rollover-info">
   <div class="rollover-header">

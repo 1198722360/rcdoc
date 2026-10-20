@@ -127,7 +127,16 @@ export default hopeTheme({
     slimsearch:{
       indexContent:true,
       suggestion:true
-    }
+    },
+
+    // 页面移动后，旧地址自动跳转到新地址
+    redirect: {
+      config: {
+        "/docs/rc_cli_config/ccs.html": "/docs/rc_quick_start/ccs.html",
+        "/docs/rc_extension/claude-desktop.html": "/docs/rc_client/claude-desktop.html",
+        "/docs/rc_quick_start/endpoints.html": "/docs/rc_questions/endpoints.html",
+      },
+    },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
     // pwa: {

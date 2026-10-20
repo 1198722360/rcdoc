@@ -9,14 +9,14 @@ footer: false
 
 轮询异步画图任务，取最终结果。[OpenAI 生成](./openai.md)和 [Gemini 生成](./gemini.md)提交后返回的 `task_id` 都在这里查。
 
-`GET https://www.rightapi.ai/v1/tasks/{task_id}`
+`GET https://rightapi.ai/v1/tasks/{task_id}`
 
 > 鉴权头：`Authorization: Bearer sk-xxxxx`，只能查询自己 API Key 名下的任务。
 
 ## 请求示例
 
 ```bash
-curl -sS "https://www.rightapi.ai/v1/tasks/{task_id}" \
+curl -sS "https://rightapi.ai/v1/tasks/{task_id}" \
   -H "Authorization: Bearer sk-xxxxx"
 ```
 
@@ -106,7 +106,7 @@ import time
 import requests
 
 API_KEY = "sk-xxxxx"
-BASE_URL = "https://www.rightapi.ai"
+BASE_URL = "https://rightapi.ai"
 HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 
 

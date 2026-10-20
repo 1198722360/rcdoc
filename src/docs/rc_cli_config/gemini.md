@@ -6,7 +6,7 @@ footer: false
 ---
 
 :::tip
-**强烈建议使用 [CC-Switch](/docs/rc_cli_config/ccs.html) 来进行配置，小白友好！（点击跳转）**
+**强烈建议使用 [CC-Switch](/docs/rc_quick_start/ccs.html) 来进行配置，小白友好！（点击跳转）**
 :::
 
 1. 找到Gemini的配置文件夹
@@ -29,7 +29,7 @@ open "$HOME/.gemini"
 
 2. 手动创建 `.env` 文件，写入如下内容
 ```text
-GOOGLE_GEMINI_BASE_URL=https://rightapi.ai/gemini
+GOOGLE_GEMINI_BASE_URL=https://rightapi.ai
 GEMINI_API_KEY=
 GEMINI_MODEL=gemini-3-pro-preview
 ```
