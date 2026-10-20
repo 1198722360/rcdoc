@@ -9,7 +9,7 @@ footer: false
 
 Gemini `generateContent` 兼容接口，适用于 `gemini-3-pro-image-preview`、`gemini-nano-banana-2.1` 等 Gemini 图像模型（Nano Banana 系列）。文生图、带参考图编辑、多图融合都走**同一个接口**：只给文本就是文生图，在 `parts` 里加参考图就是图片编辑，没有单独的编辑接口。
 
-`POST https://www.rightapi.ai/v1beta/models/{model}:generateContent`
+`POST https://rightapi.ai/v1beta/models/{model}:generateContent`
 
 ::: tip 通用约定
 - 鉴权头：`Authorization: Bearer sk-xxxxx`，也可用 Gemini 习惯的 `x-goog-api-key: sk-xxxxx`。
@@ -27,8 +27,8 @@ Gemini `generateContent` 兼容接口，适用于 `gemini-3-pro-image-preview`�
 模型名写在请求路径里，两个模型的请求体完全一致，换模型只需改路径中的 `{model}`：
 
 ```text
-https://www.rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent
-https://www.rightapi.ai/v1beta/models/gemini-nano-banana-2.1:generateContent
+https://rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent
+https://rightapi.ai/v1beta/models/gemini-nano-banana-2.1:generateContent
 ```
 
 ## 请求示例
@@ -38,7 +38,7 @@ https://www.rightapi.ai/v1beta/models/gemini-nano-banana-2.1:generateContent
 @tab 文生图
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent" \
+curl -sS -X POST "https://rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -60,7 +60,7 @@ curl -sS -X POST "https://www.rightapi.ai/v1beta/models/gemini-3-pro-image-previ
 @tab 带参考图（图片编辑）
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent" \
+curl -sS -X POST "https://rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -90,7 +90,7 @@ curl -sS -X POST "https://www.rightapi.ai/v1beta/models/gemini-3-pro-image-previ
 每张参考图一个 `inline_data` part，提示词里用「第一张图」「第二张图」指代。
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent" \
+curl -sS -X POST "https://rightapi.ai/v1beta/models/gemini-3-pro-image-preview:generateContent" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{

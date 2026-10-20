@@ -12,7 +12,7 @@ footer: false
 :::important
 如果你是 Windows 用户，请先进入 WSL 再继续。Hermes 不支持 Windows 原生命令行安装。
 
-如果你还没有装 WSL，先看 [WSL 配置](/docs/rc_extension/wsl.html)。
+如果你还没有装 WSL，可以参考 [微软官方 WSL 安装文档](https://learn.microsoft.com/zh-cn/windows/wsl/install) 先装好。
 :::
 
 这一页只讲本地命令行直接运行 `hermes` 的用法， Feishu、Telegram、托管部署这些内容可以让hermes本身帮你配置。
@@ -84,7 +84,7 @@ xdg-open "$HOME/.hermes"
 model:
   provider: custom
   default: gpt-5.4-xhigh
-  base_url: https://rightapi.ai/codex/v1
+  base_url: https://rightapi.ai/v1
   api_mode: chat_completions
 ```
 

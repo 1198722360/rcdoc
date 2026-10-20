@@ -13,14 +13,14 @@ export default sidebar({
           link: "intro.md",
         },
         {
+          text: "注册账号",
+          icon: "mdi:account-plus",
+          link: "register.md",
+        },
+        {
           text: "充值",
           icon: "fluent-mdl2:money",
           link: "recharge.md",
-        },
-        {
-          text: "ApiKey 管理",
-          icon: "mdi:key",
-          link: "apikey.md",
         },
         {
           text: "渠道与模型",
@@ -28,9 +28,24 @@ export default sidebar({
           link: "models.md",
         },
         {
-          text: "通用步骤 (一定要看)",
+          text: "ApiKey 管理",
+          icon: "mdi:key",
+          link: "apikey.md",
+        },
+        {
+          text: "通用步骤 (一定要做)",
           icon: "hugeicons:configuration-01",
           link: "normal.md",
+        },
+        {
+          text: "安装 AI Agent 工具",
+          icon: "mdi:download",
+          link: "install.md",
+        },
+        {
+          text: "CC-Switch配置",
+          icon: "vaadin:tools",
+          link: "ccs.md",
         },
       ],
     },
@@ -40,9 +55,9 @@ export default sidebar({
       prefix: "rc_cli_config/",
       children: [
         {
-          text: "CC-Switch配置",
-          icon: "vaadin:tools",
-          link: "ccs.md",
+          text: "CC-Switch CLI",
+          icon: "streamline:command",
+          link: "ccs-cli.md",
         },
         {
           text: "Claude Code配置",
@@ -56,13 +71,30 @@ export default sidebar({
         },
         {
           text: "Grok配置",
-          icon: "ri:robot-2-fill",
+          icon: "/grok-logo.svg",
           link: "grok.md",
         },
         {
-          text: "WSL 配置",
-          icon: "/wsl2-logo.svg",
-          link: "wsl.md",
+          text: "CC缓存优化代理",
+          icon: "mdi:cached",
+          link: "cache-fix.md",
+        },
+      ],
+    },
+    {
+      text: "官方客户端",
+      icon: "mdi:application-outline",
+      prefix: "rc_client/",
+      children: [
+        {
+          text: "Claude Desktop",
+          icon: "material-icon-theme:claude",
+          link: "claude-desktop.md",
+        },
+        {
+          text: "ChatGPT",
+          icon: "hugeicons:chat-gpt",
+          link: "chatgpt.md",
         },
       ],
     },
@@ -141,11 +173,6 @@ export default sidebar({
           link: "cherrystudio.md",
         },
         {
-          text: "Claude Desktop",
-          icon: "material-icon-theme:claude",
-          link: "claude-desktop.md",
-        },
-        {
           text: "OpenCode",
           icon: "/assets/icon/opencode/opencode.jpg",
           link: "opencode.md",
@@ -163,9 +190,24 @@ export default sidebar({
       prefix: "rc_questions/",
       children: [
         {
+          text: "Claude Code",
+          icon: "material-icon-theme:claude",
+          link: "claudecode.md",
+        },
+        {
           text: "Codex",
           icon: "hugeicons:chat-gpt",
           link: "codex.md",
+        },
+        {
+          text: "Grok Build",
+          icon: "/grok-logo.svg",
+          link: "grok.md",
+        },
+        {
+          text: "渠道地址速查",
+          icon: "mdi:link-variant",
+          link: "endpoints.md",
         },
       ],
     },

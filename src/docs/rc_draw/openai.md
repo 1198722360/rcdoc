@@ -14,8 +14,8 @@ OpenAI Images 兼容接口，适用于 GPT Image 系列模型（`gpt-image-2`、
 
 | 接口 | 地址 | 用途 |
 | --- | --- | --- |
-| [文生图](#文生图) | `POST https://www.rightapi.ai/v1/images/generations` | 只给提示词生成图片 |
-| [图片编辑](#图片编辑) | `POST https://www.rightapi.ai/v1/images/edits` | 基于已有图片修改：图生图、换背景、多图融合 |
+| [文生图](#文生图) | `POST https://rightapi.ai/v1/images/generations` | 只给提示词生成图片 |
+| [图片编辑](#图片编辑) | `POST https://rightapi.ai/v1/images/edits` | 基于已有图片修改：图生图、换背景、多图融合 |
 
 > 只有 OpenAI 协议有独立的图片编辑接口。Gemini 模型的编辑直接在 [Gemini 生成](./gemini.md) 的同一个接口里带参考图完成。
 
@@ -41,7 +41,7 @@ OpenAI Images 兼容接口，适用于 GPT Image 系列模型（`gpt-image-2`、
 
 ## 文生图
 
-`POST https://www.rightapi.ai/v1/images/generations`
+`POST https://rightapi.ai/v1/images/generations`
 
 ### 请求示例
 
@@ -50,7 +50,7 @@ OpenAI Images 兼容接口，适用于 GPT Image 系列模型（`gpt-image-2`、
 @tab 基础
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1/images/generations" \
+curl -sS -X POST "https://rightapi.ai/v1/images/generations" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -65,7 +65,7 @@ curl -sS -X POST "https://www.rightapi.ai/v1/images/generations" \
 @tab 高质量（GPT Image 2.5）
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1/images/generations" \
+curl -sS -X POST "https://rightapi.ai/v1/images/generations" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -122,7 +122,7 @@ GPT Image 系列使用像素尺寸（`宽x高`），不是 `1K` / `2K` / `4K` �
 
 ## 图片编辑
 
-`POST https://www.rightapi.ai/v1/images/edits`
+`POST https://rightapi.ai/v1/images/edits`
 
 和 OpenAI 官方一样，支持两种传图方式：
 
@@ -140,7 +140,7 @@ GPT Image 系列使用像素尺寸（`宽x高`），不是 `1K` / `2K` / `4K` �
 官方 SDK 的默认形态，`image` 字段直接传本地文件。
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1/images/edits" \
+curl -sS -X POST "https://rightapi.ai/v1/images/edits" \
   -H "Authorization: Bearer sk-xxxxx" \
   -F "model=gpt-image-2" \
   -F "prompt=把背景换成夜晚的雪山，保留主体" \
@@ -152,7 +152,7 @@ curl -sS -X POST "https://www.rightapi.ai/v1/images/edits" \
 @tab JSON + base64
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1/images/edits" \
+curl -sS -X POST "https://rightapi.ai/v1/images/edits" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -171,7 +171,7 @@ curl -sS -X POST "https://www.rightapi.ai/v1/images/edits" \
 传多张参考图做融合 / 换装 / 换背景，提示词里用「第一张图」「第二张图」指代各参考图。对编辑精度要求高时推荐 `gpt-image-2.5-sunburst`。
 
 ```bash
-curl -sS -X POST "https://www.rightapi.ai/v1/images/edits" \
+curl -sS -X POST "https://rightapi.ai/v1/images/edits" \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{

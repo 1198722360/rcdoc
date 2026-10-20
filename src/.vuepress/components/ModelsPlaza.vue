@@ -25,13 +25,13 @@
             <h3 class="group-name">{{ upstream.name }}</h3>
             <div class="group-remark" v-if="upstream.remark">
               <iconify-icon icon="mdi:information-outline" width="14" height="14"></iconify-icon>
-              <span>{{ upstream.remark }}</span>
+              <div class="remark-content" v-html="sanitizeRemark(upstream.remark)"></div>
             </div>
           </div>
           <div class="group-actions">
             <div class="base-url" @click="copyBaseUrl(upstream.prefix, $event)">
               <iconify-icon icon="mdi:link-variant" width="16" height="16"></iconify-icon>
-              <span class="url-text">{{ 'https://rightapi.ai' + upstream.prefix }}</span>
+              <span class="url-text">{{ getBaseUrl(upstream.prefix) }}</span>
               <iconify-icon icon="solar:copy-linear" width="14" height="14" class="copy-icon"></iconify-icon>
             </div>
           </div>
@@ -110,6 +110,38 @@ const fetchModels = async () => {
   }
 };
 
+// Codex 系渠道走 OpenAI 兼容地址，其余渠道统一使用根地址
+const V1_PREFIXES = ['/codex', '/codex-out'];
+const getBaseUrl = (prefix) =>
+  V1_PREFIXES.includes(prefix) ? 'https://rightapi.ai/v1' : 'https://rightapi.ai';
+
+// 备注来自后台富文本，只保留少量安全标签与属性
+const ALLOWED_TAGS = new Set(['P', 'H3', 'BR', 'SPAN', 'A', 'STRONG', 'B', 'EM']);
+const sanitizeRemark = (html) => {
+  if (!html || typeof DOMParser === 'undefined') return '';
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const clean = (node) => {
+    [...node.children].forEach((el) => {
+      clean(el);
+      if (!ALLOWED_TAGS.has(el.tagName)) {
+        el.replaceWith(...el.childNodes);
+        return;
+      }
+      const color = el.tagName === 'SPAN' ? el.style.color : '';
+      const href = el.tagName === 'A' ? el.getAttribute('href') || '' : '';
+      [...el.attributes].forEach((attr) => el.removeAttribute(attr.name));
+      if (color) el.style.color = color;
+      if (/^https?:\/\//i.test(href)) {
+        el.setAttribute('href', href);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  };
+  clean(doc.body);
+  return doc.body.innerHTML;
+};
+
 const showCopyToast = (message, type = 'success') => {
   toastMessage.value = message;
   toastType.value = type;
@@ -122,7 +154,7 @@ const showCopyToast = (message, type = 'success') => {
 };
 
 const copyBaseUrl = async (prefix, event) => {
-  const url = 'https://rightapi.ai' + prefix;
+  const url = getBaseUrl(prefix);
   const triggerEl = event.currentTarget;
   try {
     await navigator.clipboard.writeText(url);
@@ -299,7 +331,7 @@ onUnmounted(() => {
 
 .group-remark {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
   font-size: 13px;
   color: #5a6d82;
@@ -308,6 +340,29 @@ onUnmounted(() => {
   border-radius: 6px;
   border-left: 3px solid var(--rc-accent);
   line-height: 1.4;
+}
+
+.group-remark > iconify-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.remark-content :deep(p),
+.remark-content :deep(h3) {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.remark-content :deep(h3) {
+  font-weight: 600;
+  border: none;
+  padding: 0;
+}
+
+.remark-content :deep(a) {
+  color: var(--rc-accent);
+  word-break: break-all;
 }
 
 .base-url {

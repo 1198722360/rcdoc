@@ -12,7 +12,7 @@ footer: false
 #### responses接口
 
 ```bash
-curl https://www.rightapi.ai/codex/v1/responses \
+curl https://rightapi.ai/v1/responses \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
@@ -40,7 +40,7 @@ curl https://www.rightapi.ai/codex/v1/responses \
 #### completions接口
 
 ```bash
-curl https://www.rightapi.ai/codex/v1/chat/completions \
+curl https://rightapi.ai/v1/chat/completions \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
@@ -64,7 +64,7 @@ curl https://www.rightapi.ai/codex/v1/chat/completions \
 ### Claude
 
 ```bash
-curl https://www.rightapi.ai/claude/v1/messages \
+curl https://rightapi.ai/v1/messages \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {此处填写ApiKey}' \
   -d '{
@@ -92,7 +92,7 @@ curl https://www.rightapi.ai/claude/v1/messages \
 ### Gemini
 
 ```bash
-curl --location 'https://rightapi.ai/gemini/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse' \
+curl --location 'https://rightapi.ai/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse' \
 --header 'connection: keep-alive' \
 --header 'x-goog-api-key: {此处填写ApiKey}' \
 --header 'content-type: application/json' \
