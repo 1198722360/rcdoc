@@ -16,7 +16,7 @@ curl https://rightapi.ai/v1/responses \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
-    "model": "gpt-5.2",
+    "model": "gpt-6-sol",
     "input": [
       {
         "type": "message",
@@ -44,7 +44,7 @@ curl https://rightapi.ai/v1/chat/completions \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
-    "model": "gpt-5.2",
+    "model": "gpt-6-sol",
     "messages": [
       {
         "role": "user",
@@ -68,7 +68,7 @@ curl https://rightapi.ai/v1/messages \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {此处填写ApiKey}' \
   -d '{
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-5-5",
     "messages": [
       {
         "role": "user",
@@ -92,7 +92,7 @@ curl https://rightapi.ai/v1/messages \
 ### Gemini
 
 ```bash
-curl --location 'https://rightapi.ai/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse' \
+curl --location 'https://rightapi.ai/v1beta/models/gemini-3.8-flash:streamGenerateContent?alt=sse' \
 --header 'connection: keep-alive' \
 --header 'x-goog-api-key: {此处填写ApiKey}' \
 --header 'content-type: application/json' \

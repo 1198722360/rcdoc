@@ -45,6 +45,67 @@ open -e "$HOME/.claude.json"
 用 [CC-Switch](/docs/rc_quick_start/ccs.html) 或 [CC-Switch CLI](/docs/rc_cli_config/ccs-cli.html) 配置的话，在设置里打开“跳过 Claude Code 初次安装确认”，效果一样。
 :::
 
+## 常见报错速查
+
+| 报错关键词 | 一句话处理 |
+| --- | --- |
+| `401 Invalid API key` | Key 填错或不完整，重新复制完整 Key |
+| `504 Gateway time-out` | 等 2 分钟后发“继续”，大任务拆小 |
+| `522 Connection timed out` | 等 2 分钟后重试，持续出现进群反馈 |
+| `empty or malformed response (HTTP 200)` | 重试一次，不行就新开会话 |
+| 自动重试，`Last error: unknown` | 先等重试，不行检查网络和代理 |
+
+### 401 Invalid API key
+
+**原因：** Key 填错、复制不完整，或 Key 已被删除。
+
+**解决：**
+
+1. 到控制台「令牌管理」，点击密钥旁的复制图标，复制**完整**的 Key（不要手动框选，容易漏字符）；
+2. 重新填到 `settings.json` 的 `ANTHROPIC_AUTH_TOKEN`（或 CC-Switch 里），保存后重启 `claude`；
+3. 确认这个 Key 绑定的是 **Claude 渠道**，用其他渠道的 Key 调 Claude 模型也会失败。
+
+### 504 Gateway time-out
+
+**原因：** 单次请求处理时间太长，服务端等待超时后断开了。多见于长时间运行的大任务，和你的文件、操作无关。
+
+**解决：**
+
+1. 等待约 **2 分钟**，然后发送“继续”，大多数情况能接着跑；
+2. 看一下工作目录，断开前可能已经生成了一半的文件，避免重复操作或用到不完整的文件；
+3. 把大任务拆小，例如“下载数据 → 处理数据 → 写代码”分成几次让它做。
+
+### 522 Connection timed out
+
+**原因：** 暂时连不上服务器，属于服务端临时问题，**不需要改任何配置**。
+
+**解决：** 等待 2 分钟以上再重试。如果持续出现，进群告诉我们报错时间，我们来排查。
+
+### API returned an empty or malformed response (HTTP 200)
+
+**现象：** 提示返回内容为空（`0 bytes`、`0 stream events received`），之后再发“继续”只回复 `No response requested`。
+
+**解决：**
+
+1. 稍等后重试一次；
+2. 如果在同一个会话里反复发“继续”都没用，**新开一个会话**，把任务重新发一遍；
+3. 频繁出现时进群反馈。
+
+### 请求失败自动重试，Last error: unknown
+
+**原因：** 客户端没收到可识别的错误信息，常见于网络波动、VPN 或代理断开、服务端临时故障。
+
+**解决：**
+
+1. 先等它自动重试，通常一两次就恢复；
+2. 重试 10 次都失败，检查网络、VPN 和代理设置（如 `HTTPS_PROXY`），再检查 Key 和 `ANTHROPIC_BASE_URL` 是否填对；
+3. 重启 `claude` 或新开会话；
+4. 还是不行，用 `claude --debug` 启动，把具体报错截图发到群里。
+
+:::tip
+Claude Desktop 的报错（模型不可用、需要开启虚拟机平台等）请看 [Claude Desktop 配置后可能出现的问题](/docs/rc_client/claude-desktop.html#三、配置后可能出现的问题)。
+:::
+
 ## 明明选的是 Opus，账单里怎么有别的模型
 
 **这是正常现象，不是配置错了，也不是被多扣钱。**
@@ -54,7 +115,7 @@ Claude Code 会在后台自己做一些辅助工作，比如给对话生成标�
 Claude Desktop 也一样：新建对话发出第一条消息后，会自动调一次小模型来生成对话标题。
 
 - 这类调用一般只花几分钱，不用管；
-- 如果金额明显偏大，到后台的使用记录里查一下对应时间的那几笔，看清楚是哪个模型、哪个 Key 产生的，有疑问可以进群找我们，群号见 [Right Code 简介](/docs/rc_quick_start/intro.html#qq群)。
+- 如果金额明显偏大，到后台的使用记录里查一下对应时间的那几笔，看清楚是哪个模型、哪个 Key 产生的，有疑问可以进群找我们，群号见 [Right Code 简介](/docs/rc_quick_start/intro.html#三、交流qq群)。
 
 ## VSCode 插件怎么用 Right Code
 

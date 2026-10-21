@@ -251,7 +251,8 @@ html[data-theme="dark"] .vp-page .advantage-grid .advantage-icon {
   box-sizing: border-box;
 }
 
-// Grok 图标是黑色单色 SVG，暗色模式下反色，避免看不见
-html[data-theme="dark"] img.vp-icon[src$="grok-logo.svg"] {
+// Grok、Hermes 图标是黑色单色 SVG，暗色模式下反色，避免看不见
+html[data-theme="dark"] img.vp-icon[src$="grok-logo.svg"],
+html[data-theme="dark"] img.vp-icon[src$="hermes-logo.svg"] {
   filter: invert(1);
 }

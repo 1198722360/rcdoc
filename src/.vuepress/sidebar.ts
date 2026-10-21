@@ -179,7 +179,7 @@ export default sidebar({
         },
         {
           text: "Hermes Agent",
-          icon: "streamline:command",
+          icon: "/hermes-logo.svg",
           link: "hermes.md",
         },
       ],

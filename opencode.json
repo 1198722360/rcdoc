@@ -1,0 +1,311 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "theme": "catppuccin-macchiato",
+    "autoupdate": false,
+    "plugin": [],
+    "provider": {
+        "RCode_Google": {
+            "npm": "@ai-sdk/google",
+            "name": "RCode_Google",
+            "options": {
+                "baseURL": "https://www.rightapi.ai/v1beta",
+                "apiKey": ""
+            },
+            "models": {
+                "gemini-4-argon": {
+                    "id": "gemini-4-argon",
+                    "name": "gemini-4-argon",
+                    "family": "gemini-pro",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": true,
+                    "release_date": "2026-10-13",
+                    "modalities": {
+                        "input": ["text", "image", "video", "audio", "pdf"],
+                        "output": ["text"]
+                    },
+                    "cost": {
+                        "input": 2,
+                        "output": 12,
+                        "cache_read": 0.2,
+                        "context_over_200k": {
+                            "input": 4,
+                            "output": 18,
+                            "cache_read": 0.4
+                        }
+                    },
+                    "limit": {
+                        "context": 1048576,
+                        "output": 65536
+                    }
+                },
+                "gemini-3.8-flash": {
+                    "id": "gemini-3.8-flash",
+                    "name": "gemini-3.8-flash",
+                    "family": "gemini-flash",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": true,
+                    "release_date": "2026-09-02",
+                    "modalities": {
+                        "input": ["text", "image", "video", "audio", "pdf"],
+                        "output": ["text"]
+                    },
+                    "cost": {
+                        "input": 0.5,
+                        "output": 3,
+                        "cache_read": 0.05,
+                        "context_over_200k": {
+                            "input": 0.5,
+                            "output": 3,
+                            "cache_read": 0.05
+                        }
+                    },
+                    "limit": {
+                        "context": 1048576,
+                        "output": 65536
+                    }
+                }
+            }
+        },
+        "RCode_ClaudeCode": {
+            "npm": "@ai-sdk/anthropic",
+            "name": "RCode_ClaudeCode",
+            "options": {
+                "baseURL": "https://www.rightapi.ai/v1",
+                "apiKey": ""
+            },
+            "models": {
+                "claude-haiku-5-5": {
+                    "id": "claude-haiku-5-5",
+                    "name": "claude-haiku-5-5",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": true,
+                    "release_date": "2025-10-15",
+                    "modalities": {
+                        "input": ["text", "image", "pdf"],
+                        "output": ["text"]
+                    },
+                    "cost": {
+                        "input": 1,
+                        "output": 5,
+                        "cache_read": 0.1,
+                        "cache_write": 1.25
+                    },
+                    "limit": {
+                        "context": 200000,
+                        "output": 64000
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 32000
+                        }
+                    }
+                },
+                "claude-sonnet-5-5": {
+                    "id": "claude-sonnet-5-5",
+                    "name": "claude-sonnet-5-5",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": true,
+                    "release_date": "2025-09-29",
+                    "modalities": {
+                        "input": ["text", "image", "pdf"],
+                        "output": ["text"]
+                    },
+                    "cost": {
+                        "input": 3,
+                        "output": 15,
+                        "cache_read": 0.3,
+                        "cache_write": 3.75
+                    },
+                    "limit": {
+                        "context": 200000,
+                        "output": 64000
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 32000
+                        }
+                    }
+                },
+                "claude-opus-5-5": {
+                    "id": "claude-opus-5-5",
+                    "name": "claude-opus-5-5",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": true,
+                    "release_date": "2025-11-24",
+                    "modalities": {
+                        "input": ["text", "image", "pdf"],
+                        "output": ["text"]
+                    },
+                    "cost": {
+                        "input": 5,
+                        "output": 25,
+                        "cache_read": 0.5,
+                        "cache_write": 6.25
+                    },
+                    "limit": {
+                        "context": 200000,
+                        "output": 64000
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 32000
+                        }
+                    }
+                },
+                "claude-opus-5": {
+                    "id": "claude-opus-5",
+                    "name": "claude-opus-5",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": true,
+                    "release_date": "2025-11-24",
+                    "modalities": {
+                        "input": ["text", "image", "pdf"],
+                        "output": ["text"]
+                    },
+                    "cost": {
+                        "input": 5,
+                        "output": 25,
+                        "cache_read": 0.5,
+                        "cache_write": 6.25
+                    },
+                    "limit": {
+                        "context": 200000,
+                        "output": 64000
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 32000
+                        }
+                    }
+                }
+            }
+        },
+        "RCode_OpenAI": {
+            "npm": "@ai-sdk/openai",
+            "name": "RCode_OpenAI",
+            "options": {
+                "setCacheKey": true,
+                "baseURL": "https://www.rightapi.ai/v1",
+                "apiKey": ""
+            },
+            "models": {
+                "gpt-6.1-sol": {
+                    "name": "gpt-6.1-sol",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": false,
+                    "cost": {
+                        "input": 1.75,
+                        "output": 14,
+                        "cache_read": 0.175
+                    },
+                    "limit": {
+                        "context": 272000,
+                        "output": 128000
+                    },
+                    "options": {
+                        "store": false,
+                        "reasoningEffort": "high",
+                        "textVerbosity": "medium",
+                        "reasoningSummary": "auto",
+                        "promptCacheKey": "opencode-stable-user",
+                        "include": ["reasoning.encrypted_content"]
+                    },
+                    "variants": {
+                        "xhigh": { "reasoningEffort": "xhigh", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "high": { "reasoningEffort": "high", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "medium": { "reasoningEffort": "medium", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "low": { "reasoningEffort": "low", "textVerbosity": "medium", "reasoningSummary": "auto" }
+                    },
+                    "headers": {
+                        "x-session-id": "opencode-stable-user",
+                        "conversation_id": "opencode-stable-user",
+                        "session_id": "opencode-stable-user"
+                    }
+                },
+                "gpt-6-sol": {
+                    "name": "gpt-6-sol",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": false,
+                    "cost": {
+                        "input": 1.75,
+                        "output": 14,
+                        "cache_read": 0.175
+                    },
+                    "limit": {
+                        "context": 272000,
+                        "output": 128000
+                    },
+                    "options": {
+                        "store": false,
+                        "reasoningEffort": "high",
+                        "textVerbosity": "medium",
+                        "reasoningSummary": "auto",
+                        "promptCacheKey": "opencode-stable-user",
+                        "include": ["reasoning.encrypted_content"]
+                    },
+                    "variants": {
+                        "xhigh": { "reasoningEffort": "xhigh", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "high": { "reasoningEffort": "high", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "medium": { "reasoningEffort": "medium", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "low": { "reasoningEffort": "low", "textVerbosity": "medium", "reasoningSummary": "auto" }
+                    },
+                    "headers": {
+                        "x-session-id": "opencode-stable-user",
+                        "conversation_id": "opencode-stable-user",
+                        "session_id": "opencode-stable-user"
+                    }
+                },
+                "gpt-6-astra": {
+                    "name": "gpt-6-astra",
+                    "attachment": true,
+                    "reasoning": true,
+                    "tool_call": true,
+                    "temperature": false,
+                    "limit": {
+                        "context": 272000,
+                        "output": 128000
+                    },
+                    "options": {
+                        "store": false,
+                        "reasoningEffort": "high",
+                        "textVerbosity": "medium",
+                        "reasoningSummary": "auto",
+                        "promptCacheKey": "opencode-stable-user",
+                        "include": ["reasoning.encrypted_content"]
+                    },
+                    "variants": {
+                        "xhigh": { "reasoningEffort": "xhigh", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "high": { "reasoningEffort": "high", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "medium": { "reasoningEffort": "medium", "textVerbosity": "medium", "reasoningSummary": "auto" },
+                        "low": { "reasoningEffort": "low", "textVerbosity": "medium", "reasoningSummary": "auto" }
+                    },
+                    "headers": {
+                        "x-session-id": "opencode-stable-user",
+                        "conversation_id": "opencode-stable-user",
+                        "session_id": "opencode-stable-user"
+                    }
+                }
+            }
+        }
+    }
+}

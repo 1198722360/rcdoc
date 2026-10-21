@@ -18,6 +18,10 @@ footer: false
 ChatGPT 客户端的菜单名称可能会随版本变化，如果和下文不完全一致，在应用菜单中找到对应的选项即可。
 :::
 
+:::important
+开始前请先准备好 RightCode 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/rc_quick_start/apikey.html) 生成。
+:::
+
 ## 一、下载安装
 
 ::::tabs#os
