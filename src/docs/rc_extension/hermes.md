@@ -1,67 +1,111 @@
 ---
 title: 在 Hermes Agent 中配置使用
-icon: streamline:command
+icon: /hermes-logo.svg
 order: 4
 footer: false
 ---
 
-## 这篇教程适合谁看
-
-这篇教程适合想在自己电脑上直接运行 `hermes` 的用户。
-
 :::important
-如果你是 Windows 用户，请先进入 WSL 再继续。Hermes 不支持 Windows 原生命令行安装。
+开始前请先准备好 RightCode 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/rc_quick_start/apikey.html) 生成。
 
-如果你还没有装 WSL，可以参考 [微软官方 WSL 安装文档](https://learn.microsoft.com/zh-cn/windows/wsl/install) 先装好。
+如果你是 Windows 用户，请先进入 WSL 再继续，Hermes 不支持在 Windows 原生命令行里安装。还没有装 WSL 的话，可以参考 [微软官方 WSL 安装文档](https://learn.microsoft.com/zh-cn/windows/wsl/install) 先装好。
 :::
 
-这一页只讲本地命令行直接运行 `hermes` 的用法， Feishu、Telegram、托管部署这些内容可以让hermes本身帮你配置。
+本页只讲在本地命令行直接运行 `hermes` 的用法，Feishu、Telegram、托管部署这些可以让 Hermes 自己帮你配置。
 
-## 第一步：安装 Hermes
+## 一、安装 Hermes
 
-先根据你的系统，运行下面的命令。
+::::tabs#os
 
-:::tabs
 @tab Windows + WSL
 
-请先打开 WSL 里的 Ubuntu、Debian 之类的 Linux 终端，然后运行：
+1. 打开 WSL 终端
+
+> 在开始菜单里打开 `Ubuntu`（或你安装的其他发行版），或者在 CMD 里输入 `wsl` 后回车，进入 Linux 终端。
+
+2. 安装 Hermes
+
+> 在 WSL 的 Linux 终端里输入下面的指令后回车：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
 ```
 
-@tab macOS
+3. 检查是否安装成功
+
+> **关掉终端重新打开**，输入下面的指令后回车：
+
+```bash
+hermes --version
+```
+
+> 能输出版本号，说明安装成功。
+
+@tab MacOS
+
+1. 安装 Hermes
+
+> 按下 `Command + 空格` 打开聚焦搜索，输入 `终端`（或 `Terminal`）后打开，输入下面的指令后回车：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
 ```
+
+2. 检查是否安装成功
+
+> **关掉终端重新打开**，输入下面的指令后回车：
+
+```bash
+hermes --version
+```
+
+> 能输出版本号，说明安装成功。
 
 @tab Linux
 
+1. 安装 Hermes
+
+> 打开你的终端，输入下面的指令后回车：
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
 ```
-:::
 
-装好以后，Hermes 的配置一般会出现在 `~/.hermes` 下面。
+2. 检查是否安装成功
 
-如果安装结束后当前终端里还找不到 `hermes` 命令，先把终端关掉再打开一次。
-
-## 第二步：把 Hermes 连到 Right Code
-
-先把 Hermes 的配置目录打开。你用自己顺手的编辑器改文件就行。
-
-:::tabs
-@tab Windows + WSL
-
-先在 WSL 里进入配置目录，然后把它在 Windows 里打开：
+> **关掉终端重新打开**，输入下面的指令后回车：
 
 ```bash
-cd ~/.hermes
-explorer.exe .
+hermes --version
 ```
 
-@tab macOS
+> 能输出版本号，说明安装成功。
+
+::::
+
+> 安装完成后，Hermes 的配置目录一般是 `~/.hermes`，后面的配置就放在这里。
+
+## 二、配置 Right Code
+
+:::important
+Hermes 走的是 OpenAI 兼容接口，所有渠道的 `base_url` 都统一填 `https://www.rightapi.ai/v1`，**使用哪个渠道由 ApiKey 绑定的渠道决定**。想换渠道，只需要换一个绑定了对应渠道的 Key，地址不用改。
+:::
+
+1. 打开 Hermes 的配置文件夹
+
+::::tabs#os
+
+@tab Windows + WSL
+
+> 在 WSL 里输入下面的指令，它会在 Windows 里弹出这个文件夹：
+
+```bash
+cd ~/.hermes && explorer.exe .
+```
+
+@tab MacOS
+
+> 在终端输入下面的指令后回车：
 
 ```bash
 open "$HOME/.hermes"
@@ -69,94 +113,89 @@ open "$HOME/.hermes"
 
 @tab Linux
 
+> 在终端输入下面的指令后回车：
+
 ```bash
 xdg-open "$HOME/.hermes"
 ```
-:::
 
-如果这条命令没有反应，也可以直接用文件管理器手动打开 `~/.hermes`。
+::::
+
+> 如果命令没有反应，也可以直接用文件管理器手动打开 `~/.hermes`。
+
 <img width="848" height="551" alt="image" src="https://github.com/user-attachments/assets/269b9fdf-afe6-400a-8a62-5dd74ea63b13" />
 
+2. 打开 `config.yaml`，把 `model` 这一段改成下面这样
 
-然后先打开 `config.yaml`，把模型这一段改成下面这样：
+   ```yaml
+   model:
+     default: gpt-6.1-sol
+     provider: rightcode
+     base_url: https://www.rightapi.ai/v1
+     api_mode: chat_completions
+   ```
 
-```yaml
-model:
-  provider: custom
-  default: gpt-5.4-xhigh
-  base_url: https://rightapi.ai/v1
-  api_mode: chat_completions
-```
+   几行配置分别是什么意思：
 
-<img width="412" height="141" alt="image" src="https://github.com/user-attachments/assets/9b0e4e4f-b22a-4df9-8768-068cd5ccbe03" />
+   1. `base_url` 告诉 Hermes 以后往哪条接口地址发请求。
+   2. `default` 是默认先用哪个模型，可以换成你在后台能用的其他模型。
+   3. `api_mode` 照着写就行，不需要先研究它背后的协议细节。
 
-可以直接这样理解：
+3. 打开 `~/.hermes/.env`，填入你自己的 Right Code Key
 
-1. `base_url` 就是告诉 Hermes 以后往哪条接口地址发请求。
-2. `default` 就是默认先用哪个模型。
-3. `api_mode` 先照着写就行，不需要先研究它背后的协议细节。
+   ```bash
+   OPENAI_API_KEY=你的 Right Code Key
+   OPENAI_BASE_URL=https://www.rightapi.ai/v1
+   ```
 
-然后再打开 `~/.hermes/.env`，填入你自己的 Right Code Key：
+   > `.env` 文件内容比较长，直接拉到文件**最末尾**，把这两行加在最后面，再把 `你的 Right Code Key` 替换为你在后台生成的 ApiKey（`sk-` 开头），然后保存。如果文件里已经有 `OPENAI_API_KEY` 或 `OPENAI_BASE_URL`，直接改原来那一行即可，不要重复写。
 
-```bash
-OPENAI_API_KEY=你的 Right Code Key
-```
+   ![](/assets/image/rc_extension/hermes/rc-01.webp)
 
-如果这个文件里已经有 `OPENAI_API_KEY`，就把它改成你这次要用的 Key。
+:::important
+注意生成的 Key 要选对渠道：`可用渠道` 记得选择你要使用的渠道，`可用模型` 保持默认即可。具体步骤见 [ApiKey 生成](/docs/rc_quick_start/apikey.html#如何生成apikey)。
+:::
 
-如果你还没有 Key，可以先看 [ApiKey 管理](/docs/rc_quick_start/apikey.html)。
+## 三、验证配置
 
-## 第三步：打上缓存兼容补丁（暂时只支持GPT Codex组）
-
-这一步可以简单理解成：
-把 Hermes 调整得更适合 Right Code 这类 `/codex` 接口。
-
-先找一个你平时放项目的目录，然后运行：
-
-```bash
-git clone https://github.com/foryourhealth111-pixel/hermes-codex-proxy-cache-compat.git
-cd hermes-codex-proxy-cache-compat
-bash scripts/apply_patches.sh ~/.hermes/hermes-agent
-bash scripts/install_skill.sh ~/.hermes
-```
-
-这里不用把它想得太复杂。你只要知道：
-
-1. 中转地址不只看你发了什么内容，还会看整个请求长什么样，而hermes没有配置好这些，缓存命中很低，额度就会用的很快。
-2. 这个补丁就是把这部分也补齐。让其达到和原生Codex一样的缓存命中水平
-
-## 第四步：启动 Hermes，做一次最小可用确认
-
-现在直接启动：
+1. 启动 Hermes
 
 ```bash
 hermes
 ```
 
-进去以后，先问一个简单问题，比如：
+2. 选择模型提供商
 
-<img width="1876" height="950" alt="image" src="https://github.com/user-attachments/assets/e988357c-f0e7-46ee-8959-f4c505ef3b10" />
+> 在 Hermes 里输入 `/model` 后回车，打开模型选择器。用方向键选择**你的 Key 所绑定渠道对应的提供商**，回车确认：
+>
+> - Codex 渠道的 Key，选择 `OpenAI API`
+> - Claude 渠道的 Key，选择 `Anthropic`
 
+![](/assets/image/rc_extension/hermes/rc-02.webp)
 
-```text
-请用三句话介绍一下hermes 是做什么的。
-```
+> 启动时顶部可能会出现 `No usable credentials found for provider ...` 之类的黄色提示，或者检测到旧的 OpenClaw 目录的提示，这些不影响使用，忽略即可。
 
-只要它能正常返回内容，这一轮就算已经跑通。
+3. 选择模型
 
-如果这一步报的是 Key 错误、地址错误，或者模型不存在，回到第二步重新检查就行。
+> 进入提供商后会列出可用的模型，可以直接输入模型名筛选。选中你要用的模型后回车确认：
+
+![](/assets/image/rc_extension/hermes/rc-03.webp)
+
+4. 发一条消息测试
+
+> 看到 `Model switched` 的提示后，随便发一句话，比如 `你好`，能正常回复即说明配置成功：
+
+![](/assets/image/rc_extension/hermes/rc-04.webp)
+
+> 如果这一步报的是 Key 错误、地址错误，或者模型不存在，回到第二步重新检查即可。
 
 :::tip
-如果你后面还想额外看一眼缓存有没有动起来，可以在同一个会话里连续问两次前缀差不多的问题，再留意 `cached_tokens` 或 `cache_read_tokens`。
-
-如果你每次都开新会话、每次都换一大段提示词，那就算补丁装对了，也不一定能看到明显缓存命中。
+通过 `/model` 切换的模型**只在当前会话生效**，下次启动还是会用 `config.yaml` 里 `default` 设置的模型。想换掉默认模型，按提示在切换时加上 `--global`，或者直接修改 `config.yaml` 里的 `default`。
 :::
 
-## 结束
+## 后续说明
 
-现在你已经可以继续正常使用 Hermes + Right Code 了。
-
-如果后面 Hermes 更新了，补丁有可能要重新打一遍；到补丁仓库 README 看最新说明即可。
+现在你已经可以正常使用 Hermes + Right Code 了。
 
 需要继续看 Key 或模型信息的话，可以接着看：
 

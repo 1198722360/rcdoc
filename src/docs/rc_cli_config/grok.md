@@ -5,6 +5,10 @@ order: 5
 footer: false
 ---
 
+:::important
+开始前请先准备好 RightCode 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/rc_quick_start/apikey.html) 生成。
+:::
+
 ## 一、安装 Grok Build
 
 > Grok Build 使用官方安装脚本安装，**不需要** Nodejs

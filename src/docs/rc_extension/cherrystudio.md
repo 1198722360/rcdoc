@@ -5,52 +5,94 @@ order: 1
 footer: false
 ---
 
-## 在 CherryStudio 中配置 RightCode
-
-CherryStudio 支持 OpenAI 兼容接口，可以直接接入 RightCode 的 Codex Pro 地址使用。
+CherryStudio 支持 OpenAI 兼容接口，可以直接接入 RightCode 使用。
 
 :::important
 开始前请先准备好 RightCode 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/rc_quick_start/apikey.html) 生成。
 :::
 
-1. 打开 CherryStudio，点击右上角设置按钮，进入 `模型服务` 页面。
+## 一、进入服务商配置页面
 
-![CherryStudio 模型服务](/assets/image/rc_extension/cherrystudio/model-services.png)
+> 根据你的情况选择对应的入口：**刚下载 CherryStudio** 的新用户看「首次启动」，**已经在用 CherryStudio** 的看「日常使用」。
 
-2. 在模型服务列表底部点击 `添加`，新增一个提供商。
+::::tabs#cherrystudio
 
-弹窗中按下面填写：
+@tab 首次启动
 
-- `提供商名称`：`RightCode`
-- `提供商类型`：`New Api`
+1. 首次打开 CherryStudio 会进入欢迎页，确认底部已勾选 `我已阅读并同意 隐私协议`，然后点击 `配置其他服务商`
 
-![添加 RightCode 提供商](/assets/image/rc_extension/cherrystudio/add-provider.png)
+![](/assets/image/rc_extension/cherrystudio/welcome-setup.webp)
 
-3. 进入刚创建的 `RightCode` 提供商，填写 API 配置。
+> 不要点上面的 `连接 CherryIN`，那是 CherryStudio 自家的服务，和 RightCode 无关。
 
-- `API 密钥`：填写你的 RightCode ApiKey
-- `API 地址`：`https://rightapi.ai/v1`
+@tab 日常使用
 
-![配置 RightCode 提供商](/assets/image/rc_extension/cherrystudio/provider-config.png)
+1. 在 CherryStudio 主界面，点击左下角的 **设置**（齿轮图标），进入配置页面
+
+![](/assets/image/rc_extension/cherrystudio/daily-settings.webp)
+
+> 进入后选择 `模型服务`，就能看到服务商列表，后面的操作和首次启动完全一样。
+
+::::
+
+## 二、添加 RightCode 服务商
 
 :::tip
-填完 API 地址后，CherryStudio 预览到 `/chat/completions` 接口是正常的。
+从这一步开始，**首次启动和日常使用的操作都是一样的**，按顺序往下做即可。
 :::
 
-4. 点击 `获取模型列表`，在模型窗口中选择你要使用的模型，例如 `gpt-5.5`。
+1. 在左侧服务商列表的底部，点击 `添加服务商`
 
-![选择 RightCode 模型](/assets/image/rc_extension/cherrystudio/select-model.png)
+![](/assets/image/rc_extension/cherrystudio/add-provider.webp)
 
-5. 模型添加完成后，确认 `RightCode` 提供商右上角开关已打开，并且模型列表里能看到刚刚添加的模型。
+2. 在弹出的「添加自定义提供商」窗口中，按下面填写，然后点击 `添加`
 
-![确认模型已添加](/assets/image/rc_extension/cherrystudio/selected-model.png)
+- `提供商名称`：填 `RightCode`
+- `API 密钥`：粘贴你在 RightCode 后台「令牌管理」页面生成的 ApiKey
+- `端点设置` → `OpenAI`：填 `https://rightapi.ai/v1`
 
-6. 回到 CherryStudio 首页，在顶部模型选择器中选择 `gpt-5.5 | RightCode`，发送一句简单消息测试。
+![](/assets/image/rc_extension/cherrystudio/provider-form.webp)
 
-![测试对话](/assets/image/rc_extension/cherrystudio/chat-test.png)
+:::warning 注意地址结尾的 /v1
+OpenAI 兼容的地址**必须带上 `/v1`**，即 `https://rightapi.ai/v1`。填写正确时，输入框下方会显示请求路径 `https://rightapi.ai/v1/chat/completions`。
+如果还要配置其他类型的端点（如 Anthropic），地址统一填 `https://rightapi.ai`，**不带** `/v1`。
+:::
 
-如果能正常返回内容，就说明 CherryStudio 已经接入 RightCode。
+3. 进入「选择模型」页面，勾选你要使用的模型（可以多选，也可以直接全选），然后点击 `添加所选模型`
 
-:::tip
-如果获取模型列表失败，优先检查 API Key 和 API 地址是否填写正确；如果模型能添加但聊天报错，再确认当前 Key 是否允许使用对应模型。
+![](/assets/image/rc_extension/cherrystudio/select-models.webp)
+
+> 能看到哪些模型由你的 ApiKey 绑定的渠道决定。如果这里列表为空，请回头检查 ApiKey 和 API 地址是否填写正确。
+
+4. CherryStudio 会自动检测并启用服务商。三项都显示绿色对勾，说明检测正常，点击 `完成`
+
+![](/assets/image/rc_extension/cherrystudio/check-enable.webp)
+
+5. 回到服务商页面，确认 `RightCode` 右上角的开关已经打开，并且模型列表里能看到刚才添加的模型，然后点击右下角 `下一步`
+
+![](/assets/image/rc_extension/cherrystudio/provider-done.webp)
+
+## 三、选择默认模型
+
+1. 依次为 `默认助手模型`、`快速模型`、`翻译模型` 三个场景选择你需要的模型，全部选好后点击 `开始使用`
+
+![](/assets/image/rc_extension/cherrystudio/default-models.webp)
+
+> 三个都要选择，否则 `开始使用` 按钮是灰色的，无法点击。不确定选哪个的话，三项选同一个模型也可以，之后随时能在设置里更改。
+
+## 四、验证配置
+
+1. 回到对话页面，点击顶部的模型选择器，可以看到 `RightCode` 分组下刚添加的模型，选择一个你要使用的模型
+
+![](/assets/image/rc_extension/cherrystudio/switch-model.webp)
+
+> 日常使用中想换模型，也是在这里直接切换。
+
+2. 发送一句简单的消息（例如「你好」），能正常回复就说明配置成功
+
+![](/assets/image/rc_extension/cherrystudio/chat-test.webp)
+
+:::tip 遇到问题？
+- **模型列表获取失败 / 检测不通过**：优先检查 ApiKey 是否复制完整，以及 API 地址是否为 `https://rightapi.ai/v1`。
+- **模型能添加但聊天报错**：确认当前 ApiKey 绑定的渠道是否支持该模型，可以换一个模型试试。
 :::

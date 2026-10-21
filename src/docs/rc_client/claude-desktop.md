@@ -13,6 +13,10 @@ Claude Desktop 是 Anthropic 官方桌面客户端，支持聊天、文件处理
 Claude Desktop 的菜单名称可能会随版本变化，如果和下文不完全一致，在应用菜单中找到对应的配置项即可。
 :::
 
+:::important
+开始前请先准备好 RightCode 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/rc_quick_start/apikey.html) 生成。
+:::
+
 ## 一、下载安装
 
 ::::tabs#os

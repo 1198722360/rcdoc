@@ -5,6 +5,10 @@ order: 3
 footer: false
 ---
 
+:::important
+开始前请先准备好 RightCode 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/rc_quick_start/apikey.html) 生成。
+:::
+
 ## 一、安装 Codex
 
 > 安装前请先完成 [通用步骤](/docs/rc_quick_start/normal.html)，确认 Nodejs 已经装好
