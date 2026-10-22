@@ -173,6 +173,16 @@ export default sidebar({
           link: "cherrystudio.md",
         },
         {
+          text: "WorkBuddy",
+          icon: "/workbuddy-logo.svg",
+          link: "workbuddy.md",
+        },
+        {
+          text: "DeepSeek Harness",
+          icon: "/deepseek-logo.svg",
+          link: "deepseek.md",
+        },
+        {
           text: "OpenCode",
           icon: "/assets/icon/opencode/opencode.jpg",
           link: "opencode.md",
