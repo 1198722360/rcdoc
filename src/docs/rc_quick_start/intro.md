@@ -91,20 +91,6 @@ footer: false
     </div>
     <div class="qq-group-content">
       <div class="qq-group-header">
-        <span class="qq-group-name">1群</span>
-      </div>
-      <div class="qq-group-number">741292866</div>
-    </div>
-    <button class="qq-group-copy" @click="copyText('741292866', $event)">
-      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
-    </button>
-  </div>
-  <div class="qq-group-card is-open">
-    <div class="qq-group-icon-wrap">
-      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
-    </div>
-    <div class="qq-group-content">
-      <div class="qq-group-header">
         <span class="qq-group-name">2群</span>
       </div>
       <div class="qq-group-number">1083110871</div>

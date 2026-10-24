@@ -123,6 +123,11 @@ export default sidebar({
           icon: "material-symbols:manage-search",
           link: "tasks.md",
         },
+        {
+          text: "ChatGPT 配置生成",
+          icon: "hugeicons:chat-gpt",
+          link: "chatgpt.md",
+        },
       ],
     },
     {
