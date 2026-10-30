@@ -12,13 +12,3 @@ footer: false
 3. 最右侧是各个模型的实时可用性情况，方便各位佬查看模型状态
 
 ![](/assets/image/rc_quick_start/rc-3.webp)
-
-## 二、模型列表
-
-<ClientOnly>
-  <ModelsPlaza />
-</ClientOnly>
-
-<script setup>
-import ModelsPlaza from '@source/.vuepress/components/ModelsPlaza.vue';
-</script>

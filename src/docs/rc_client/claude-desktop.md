@@ -83,13 +83,15 @@ CC-Switch 支持一键导入 Claude Code 配置并切换渠道。如果你只想
 | --- | --- |
 | Connection（连接方式） | 选择 `Gateway` |
 | Credential kind | 选择 `Static API key` |
-| Gateway base URL | `https://rightapi.ai` |
+| Gateway base URL | `https://api.site` |
 | Gateway API key | 粘贴你在 Right Code 控制台创建的 API 密钥 |
 | Gateway auth scheme | 选择 `bearer` |
 
 其余选项保持默认即可，填写完成后点击右下角的 **Apply Changes**。
 
 ![](/assets/image/rc_client/claude-desktop/win-03.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 :::tip
 填写完成后可以先点击右上角的 **Test connection** 测试连通性，确认无误后再应用。
@@ -98,6 +100,8 @@ CC-Switch 支持一键导入 Claude Code 配置并切换渠道。如果你只想
 Gateway API key 可以在 Right Code 控制台的 **令牌管理** 页面获取：在密钥列表中找到要使用的 Key，点击密钥旁边的 **复制图标** 即可复制完整密钥。
 
 ![](/assets/image/rc_client/claude-desktop/apikey.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ### 4. 保存并重启
 
@@ -133,13 +137,15 @@ Gateway API key 可以在 Right Code 控制台的 **令牌管理** 页面获取�
 | --- | --- |
 | Connection（连接方式） | 选择 `Gateway` |
 | Credential kind | 选择 `Static API key` |
-| Gateway base URL | `https://rightapi.ai` |
+| Gateway base URL | `https://api.site` |
 | Gateway API key | 粘贴你在 Right Code 控制台创建的 API 密钥 |
 | Gateway auth scheme | 选择 `bearer` |
 
 其余选项保持默认即可，填写完成后点击右下角的 **Apply Changes**，并在弹出的「Save & Restart?」对话框中点击 **Save & Restart**，客户端会自动重启并加载新配置。
 
 ![](/assets/image/rc_client/claude-desktop/mac-03.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 :::tip
 填写完成后可以先点击右上角的 **Test connection** 测试连通性，确认无误后再应用。
@@ -148,6 +154,8 @@ Gateway API key 可以在 Right Code 控制台的 **令牌管理** 页面获取�
 Gateway API key 可以在 Right Code 控制台的 **令牌管理** 页面获取：在密钥列表中找到要使用的 Key，点击密钥旁边的 **复制图标** 即可复制完整密钥。
 
 ![](/assets/image/rc_client/claude-desktop/apikey.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ### 4. 验证配置
 
@@ -159,7 +167,7 @@ Gateway API key 可以在 Right Code 控制台的 **令牌管理** 页面获取�
 
 :::warning 常见问题
 - **没有看到「开发者」菜单**：确认已在「帮助 → 故障排查」中启用开发者模式，必要时完全退出 Claude（包括托盘/菜单栏图标）后重新打开。
-- **发送消息无回复或报错**：检查 Gateway base URL 是否准确填写为 `https://rightapi.ai`、API 密钥是否完整复制、auth scheme 是否为 `bearer`。
+- **发送消息无回复或报错**：检查 Gateway base URL 是否准确填写为 `https://api.site`、API 密钥是否完整复制、auth scheme 是否为 `bearer`。
 :::
 
 ## 三、配置后可能出现的问题
@@ -179,10 +187,14 @@ Gateway API key 可以在 Right Code 控制台的 **令牌管理** 页面获取�
 
 ![](/assets/image/rc_client/claude-desktop/issue-02.webp)
 
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 3. 找到报错中提到的模型（例如 `claude-haiku-4-5`），点击该行右侧的 **下拉箭头**，在列表中选择 Right Code 实际提供的模型名（例如 `claude-haiku-4-5-20251001`）；
 4. 点击右下角 **保存**，然后回到 Claude Desktop 点击报错卡片上的 **Check again**（或重启客户端），报错消失即可正常使用。
 
 ![](/assets/image/rc_client/claude-desktop/issue-03.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 :::tip
 报错里的 `probedModel` 字段就是出问题的模型名，按照它在模型列表中找到对应行修改即可。其他模型如果也报同样的错误，用相同方法逐个替换为下拉列表中存在的模型名。

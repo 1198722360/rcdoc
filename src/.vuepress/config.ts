@@ -23,7 +23,7 @@ export default defineUserConfig({
       server: {
         proxy: {
           '/rc-api': {
-            target: 'https://rightapi.ai',
+            target: 'https://api.site',
             changeOrigin: true,
             rewrite: (path) => path.replace(/^\/rc-api/, ''),
           },

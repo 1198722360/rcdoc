@@ -89,7 +89,7 @@ Write-Output "已保存: $out"
 回到 PowerShell，依次执行下面两条指令，把 `sk-xxxxx` 换成你自己的生图密钥：
 
 ```powershell
-setx IMAGE_API_BASE "https://rightapi.ai/v1"
+setx IMAGE_API_BASE "https://api.site/v1"
 ```
 
 ```powershell
@@ -99,6 +99,8 @@ setx IMAGE_API_KEY "sk-xxxxx"
 每条执行后看到「成功: 指定的值已得到保存」即可。
 
 ![](/assets/image/rc_draw/chatgpt/win-env.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 :::warning
 `setx` 写入的环境变量**只对之后新打开的程序生效**。设置完后要把 ChatGPT 完全退出（关掉窗口后，再到任务栏右下角托盘 **右键 ChatGPT 图标 → Exit**），然后重新打开。
@@ -138,13 +140,15 @@ setx IMAGE_API_KEY "sk-xxxxx"
 # ============================================
 # Image Config
 # ============================================
-export IMAGE_API_BASE="https://rightapi.ai/v1"
+export IMAGE_API_BASE="https://api.site/v1"
 export IMAGE_API_KEY="sk-xxxxx"
 ```
 
 > 文件里原有的其他内容（如 Go、Rust、Node.js 的配置）保持不动，只追加这一段。
 
 ![](/assets/image/rc_draw/chatgpt/mac-env.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ### 3. 创建技能文件
 

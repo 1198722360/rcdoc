@@ -169,7 +169,7 @@
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 
 // 根据环境选择 API 基础地址
-const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://rightapi.ai'
+const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://api.site'
 
 const apiKey = ref('')
 const showApiKey = ref(false)
@@ -323,7 +323,7 @@ function generateCurl(api) {
   if (api.id === 'codex') {
     const endpoint = api.endpoints.find(e => e.name === api.selectedEndpoint)
     if (api.selectedEndpoint === 'responses') {
-      return `curl https://rightapi.ai${endpoint.path} \\
+      return `curl https://api.site${endpoint.path} \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ${key}' \\
   -d '{
@@ -343,7 +343,7 @@ function generateCurl(api) {
     "stream": true
   }'`
     } else {
-      return `curl https://rightapi.ai${endpoint.path} \\
+      return `curl https://api.site${endpoint.path} \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ${key}' \\
   -d '{
@@ -358,7 +358,7 @@ function generateCurl(api) {
   }'`
     }
   } else if (api.id === 'claude') {
-    return `curl https://rightapi.ai/v1/messages \\
+    return `curl https://api.site/v1/messages \\
   -H 'Content-Type: application/json' \\
   -H 'x-api-key: ${key}' \\
   -d '{
@@ -380,7 +380,7 @@ function generateCurl(api) {
   }'`
   } else if (api.id === 'gemini') {
     const method = useStream ? 'streamGenerateContent?alt=sse' : 'generateContent'
-    return `curl --location 'https://rightapi.ai/v1beta/models/${api.selectedModel}:${method}' \\
+    return `curl --location 'https://api.site/v1beta/models/${api.selectedModel}:${method}' \\
 --header 'connection: keep-alive' \\
 --header 'x-goog-api-key: ${key}' \\
 --header 'content-type: application/json' \\
@@ -542,13 +542,13 @@ function clearResponse() {
 function getRequestUrl(api) {
   if (api.id === 'codex') {
     const endpoint = api.endpoints.find(e => e.name === api.selectedEndpoint)
-    return `https://rightapi.ai${endpoint.path}`
+    return `https://api.site${endpoint.path}`
   } else if (api.id === 'claude') {
-    return 'https://rightapi.ai/v1/messages'
+    return 'https://api.site/v1/messages'
   } else if (api.id === 'gemini') {
     const useStream = isStreamOnly(api) ? true : api.stream
     const method = useStream ? 'streamGenerateContent?alt=sse' : 'generateContent'
-    return `https://rightapi.ai/v1beta/models/${api.selectedModel}:${method}`
+    return `https://api.site/v1beta/models/${api.selectedModel}:${method}`
   }
   return ''
 }

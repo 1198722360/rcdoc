@@ -31,7 +31,7 @@ DeepSeek Harness 支持添加自定义模型 API（OpenAI / Anthropic 兼容协�
 
 - `Provider ID`：可以随意填，以小写字母开头即可，例如 `rightcode-gateway`
 - `显示名称`：可以随意填，只是显示的名称，建议填 `RightCode`
-- `API 地址`：填 `https://rightapi.ai/v1`
+- `API 地址`：填 `https://api.site/v1`
 - `API 协议`：选择 `OpenAI Chat Completions`
 - `API 密钥`：粘贴你在 RightCode 后台「令牌管理」页面生成的 ApiKey
 
@@ -39,10 +39,12 @@ DeepSeek Harness 支持添加自定义模型 API（OpenAI / Anthropic 兼容协�
 
 ![](/assets/image/rc_extension/deepseek/provider-form.webp)
 
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 :::warning API 协议决定地址是否带 /v1
 `API 地址` 是否加 `/v1`，取决于你在 `API 协议` 中选择的格式：
-- 选择 **OpenAI** 格式（如 `OpenAI Chat Completions`）时，地址**必须带上 `/v1`**，即 `https://rightapi.ai/v1`。
-- 选择其他格式（如 Anthropic）时，地址填 `https://rightapi.ai`，**不带** `/v1`。
+- 选择 **OpenAI** 格式（如 `OpenAI Chat Completions`）时，地址**必须带上 `/v1`**，即 `https://api.site/v1`。
+- 选择其他格式（如 Anthropic）时，地址填 `https://api.site`，**不带** `/v1`。
 :::
 
 3. 在弹出的「选择要添加的模型」窗口中，勾选你要使用的模型（默认全选，也可以通过搜索框筛选），然后点击 `添加所选`
@@ -54,6 +56,8 @@ DeepSeek Harness 支持添加自定义模型 API（OpenAI / Anthropic 兼容协�
 4. 回到表单，确认「模型目录」中已经出现刚才勾选的模型，然后点击右下角 `创建提供商`
 
 ![](/assets/image/rc_extension/deepseek/create-provider.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 > 自定义模型 API 至少需要一个模型，模型目录为空时 `创建提供商` 按钮是灰色的，无法点击。
 

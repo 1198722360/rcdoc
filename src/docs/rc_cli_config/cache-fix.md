@@ -43,7 +43,7 @@ Claude Code 用久了，可能会遇到这些情况：
 ```text
 请根据 https://github.com/cnighswonger/claude-code-cache-fix 的最新 README，
 帮我在当前系统中配置 Claude Code 缓存优化代理。要求：
-1. 我使用 Right Code，upstream 必须是 https://rightapi.ai
+1. 我使用 Right Code，upstream 必须是 https://api.site
 2. Claude Code 的 ANTHROPIC_BASE_URL 改为指向本地代理 http://127.0.0.1:9801
 3. 保留 ANTHROPIC_AUTH_TOKEN，继续使用我的 Right Code Claude 渠道 Key
 4. 如果是 Windows，请按 WSL 里的 Linux 环境来配置
@@ -52,7 +52,7 @@ Claude Code 用久了，可能会遇到这些情况：
 ```
 
 :::tip
-无论用 Claude 官渠还是 AwsQ 渠道，upstream 都是 `https://rightapi.ai`，渠道由你的 Key 决定。
+无论用 Claude 官渠还是 AwsQ 渠道，upstream 都是 `https://api.site`，渠道由你的 Key 决定。
 :::
 
 ## 手动快速验证
@@ -63,7 +63,7 @@ Claude Code 用久了，可能会遇到这些情况：
 
 ```bash
 npm install -g claude-code-cache-fix
-CACHE_FIX_PROXY_UPSTREAM=https://rightapi.ai cache-fix-proxy server
+CACHE_FIX_PROXY_UPSTREAM=https://api.site cache-fix-proxy server
 ```
 
 2. 修改 Claude Code 的 `~/.claude/settings.json`，把 `ANTHROPIC_BASE_URL` 指向本地代理，Key 不变

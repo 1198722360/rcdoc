@@ -80,7 +80,7 @@ grok --version
 ## 二、手动配置 Right Code
 
 :::important
-Grok Build 的 `models_base_url` 统一填 `https://rightapi.ai/v1`（注意要带 `/v1`），**使用哪个渠道由 ApiKey 绑定的渠道决定**。ApiKey 需要绑定 Grok 渠道，想换渠道只需要换 Key，地址不用改。
+Grok Build 的 `models_base_url` 统一填 `https://api.site/v1`（注意要带 `/v1`），**使用哪个渠道由 ApiKey 绑定的渠道决定**。ApiKey 需要绑定 Grok 渠道，想换渠道只需要换 Key，地址不用改。
 :::
 
 ::::tabs#os
@@ -111,7 +111,7 @@ mkdir "%USERPROFILE%\.grok"
    web_search = "grok-4.7"
 
    [endpoints]
-   models_base_url = "https://rightapi.ai/v1"
+   models_base_url = "https://api.site/v1"
 
    [model."grok-4.7"]
    model = "grok-4.7"
@@ -127,6 +127,8 @@ mkdir "%USERPROFILE%\.grok"
 3. 将`config.toml`文件下 `api_key` 部分的`sk-xxx`替换为你在后台生成的 ApiKey，然后保存
 
 ![](/assets/image/rc_cli_config/rc-22.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 @tab MacOS
 
@@ -148,7 +150,7 @@ mkdir -p "$HOME/.grok" && open "$HOME/.grok"
    web_search = "grok-4.7"
 
    [endpoints]
-   models_base_url = "https://rightapi.ai/v1"
+   models_base_url = "https://api.site/v1"
 
    [model."grok-4.7"]
    model = "grok-4.7"
@@ -164,6 +166,8 @@ mkdir -p "$HOME/.grok" && open "$HOME/.grok"
 3. 将`config.toml`文件下 `api_key` 部分的`sk-xxx`替换为你在后台生成的 ApiKey，然后保存
 
 ![](/assets/image/rc_cli_config/rc-22.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ::::
 

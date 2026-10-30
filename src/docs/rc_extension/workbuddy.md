@@ -30,15 +30,17 @@ WorkBuddy 支持添加 OpenAI 兼容协议的自定义模型，可以直接接�
 2. 在弹出的「添加模型」窗口中，按下面填写，然后点击 `保存`
 
 - `供应商`：选择 `自定义`
-- `接口地址`：填 `https://rightapi.ai/v1`
+- `接口地址`：填 `https://api.site/v1`
 - `API Key`：粘贴你在 RightCode 后台「令牌管理」页面生成的 ApiKey
 - `模型名称`：填你要使用的模型名，例如 `gpt-6.1-sol`
 - `高级配置`：保持勾选 `工具调用`，其他选项按需勾选
 
 ![](/assets/image/rc_extension/workbuddy/model-form.webp)
 
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 :::warning 注意地址结尾的 /v1
-WorkBuddy 只支持 OpenAI 兼容协议，地址**必须带上 `/v1`**，即 `https://rightapi.ai/v1`。
+WorkBuddy 只支持 OpenAI 兼容协议，地址**必须带上 `/v1`**，即 `https://api.site/v1`。
 :::
 
 > `模型名称` 必须和 RightCode 里的模型名完全一致，不确定的话可以到模型列表里直接复制。填好后可以先点 `测试连接` 检查一下，再点击 `保存`。
@@ -61,6 +63,6 @@ WorkBuddy 只支持 OpenAI 兼容协议，地址**必须带上 `/v1`**，即 `ht
 ![](/assets/image/rc_extension/workbuddy/chat-test.webp)
 
 :::tip 遇到问题？
-- **测试连接失败**：优先检查 ApiKey 是否复制完整，以及接口地址是否为 `https://rightapi.ai/v1`。
+- **测试连接失败**：优先检查 ApiKey 是否复制完整，以及接口地址是否为 `https://api.site/v1`。
 - **发送消息报错**：先确认模型选择器里选中的是 `自定义模型` 分组下的模型，而不是 WorkBuddy 自带模型；再确认模型名称填写正确，且当前 ApiKey 绑定的渠道支持该模型。
 :::

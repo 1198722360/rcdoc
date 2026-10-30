@@ -65,15 +65,19 @@ cc-switch --app codex     # Codex
 
 4. 在左侧选 `Providers`，新增一个供应商：
    - 模板列表里有 `Right Code` 就直接选它，只需要填 `API Key`。
-   - 没有的话选自定义：Claude Code 的请求地址填 `https://rightapi.ai`，Codex 填 `https://rightapi.ai/v1`。
+   - 没有的话选自定义：Claude Code 的请求地址填 `https://api.site`，Codex 填 `https://api.site/v1`。
 
    ![](/assets/image/rc_cli_config/rc-24.webp)
 
    ![](/assets/image/rc_cli_config/rc-25.webp)
 
+   > 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 5. 保存后回到供应商列表，确认当前选中的是刚添加的 Right Code。
 
    ![](/assets/image/rc_cli_config/rc-26.webp)
+
+   > 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 6. 如果配置的是 Claude Code，到 `设置` 里打开 **跳过 Claude Code 初次安装确认**。它会往 `~/.claude.json` 写入 `hasCompletedOnboarding: true`，避免 Claude Code 第一次启动卡在官方登录页。
 

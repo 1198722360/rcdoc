@@ -12,6 +12,8 @@ footer: false
 
 ![](/assets/image/rc_quick_start/rc-17.webp)
 
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 3. 创建密钥的几个注意事项：
 
     - `绑定渠道` 一定需要选择你想使用的正确渠道，单个渠道只能调用渠道下模型
@@ -24,6 +26,8 @@ footer: false
    ⚠️ `Base Url` 和 `密钥` 是你在使用AI工具最常用也最必要的东西,务必了解.
 
 ![](/assets/image/rc_quick_start/rc-19.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ## Key 权限说明（很重要）
 

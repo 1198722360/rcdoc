@@ -7,7 +7,7 @@ footer: false
 
 # 接口参考
 
-`POST https://www.rightapi.ai/v1/systemone`
+`POST https://api.site/v1/systemone`
 
 对一个 `state` 并行回答一组带类型的问题，一次返回全部答案。不支持流式。
 
