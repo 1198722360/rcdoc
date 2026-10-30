@@ -52,7 +52,7 @@ ChatGPT 客户端的菜单名称可能会随版本变化，如果和下文不完
 ## 二、手动配置 Right Code
 
 :::important
-Codex 的 `base_url` 统一填 `https://rightapi.ai/v1`（注意要带 `/v1`），**使用哪个渠道由 ApiKey 绑定的渠道决定**。ApiKey 需要绑定 Codex 渠道，想换渠道只需要换 Key，地址不用改。详见 [渠道地址速查](/docs/rc_questions/endpoints.html)。
+Codex 的 `base_url` 统一填 `https://api.site/v1`（注意要带 `/v1`），**使用哪个渠道由 ApiKey 绑定的渠道决定**。ApiKey 需要绑定 Codex 渠道，想换渠道只需要换 Key，地址不用改。详见 [渠道地址速查](/docs/rc_questions/endpoints.html)。
 :::
 
 ::::tabs#os
@@ -93,7 +93,7 @@ mkdir "%USERPROFILE%\.codex"
 
    [model_providers.rightcode]
    name = "rightcode"
-   base_url = "https://rightapi.ai/v1"
+   base_url = "https://api.site/v1"
    wire_api = "responses"
    requires_openai_auth = false
    experimental_bearer_token = "sk-xxx"
@@ -104,6 +104,8 @@ mkdir "%USERPROFILE%\.codex"
 3. 将`config.toml`文件下 `experimental_bearer_token` 部分的`sk-xxx`替换为你在后台生成的 ApiKey，然后保存
 
 ![](/assets/image/rc_cli_config/rc-16.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 @tab MacOS
 
@@ -135,7 +137,7 @@ mkdir -p "$HOME/.codex" && open "$HOME/.codex"
 
    [model_providers.rightcode]
    name = "rightcode"
-   base_url = "https://rightapi.ai/v1"
+   base_url = "https://api.site/v1"
    wire_api = "responses"
    requires_openai_auth = false
    experimental_bearer_token = "sk-xxx"
@@ -146,6 +148,8 @@ mkdir -p "$HOME/.codex" && open "$HOME/.codex"
 3. 将`config.toml`文件下 `experimental_bearer_token` 部分的`sk-xxx`替换为你在后台生成的 ApiKey，然后保存
 
 ![](/assets/image/rc_cli_config/rc-16.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ::::
 

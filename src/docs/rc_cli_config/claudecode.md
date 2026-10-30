@@ -92,7 +92,7 @@ sudo npm install -g @anthropic-ai/claude-code
 ## 二、手动配置 Right Code
 
 :::important
-所有 Claude 渠道的 `ANTHROPIC_BASE_URL` 都统一填 `https://rightapi.ai`，**使用哪个渠道由 ApiKey 绑定的渠道决定**。想换渠道，只需要换一个绑定了对应渠道的 Key，地址不用改。
+所有 Claude 渠道的 `ANTHROPIC_BASE_URL` 都统一填 `https://api.site`，**使用哪个渠道由 ApiKey 绑定的渠道决定**。想换渠道，只需要换一个绑定了对应渠道的 Key，地址不用改。
 :::
 
 ::::tabs#os
@@ -121,7 +121,7 @@ mkdir "%USERPROFILE%\.claude"
    {
      "env": {
        "ANTHROPIC_AUTH_TOKEN": "sk-xxx",
-       "ANTHROPIC_BASE_URL": "https://rightapi.ai",
+       "ANTHROPIC_BASE_URL": "https://api.site",
        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
      }
    }
@@ -132,6 +132,8 @@ mkdir "%USERPROFILE%\.claude"
 3. 将`settings.json`文件下 `ANTHROPIC_AUTH_TOKEN` 部分的`sk-xxx`替换为你在后台生成的 ApiKey，然后保存
 
 ![](/assets/image/rc_cli_config/rc-11.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 @tab MacOS
 
@@ -151,7 +153,7 @@ mkdir -p "$HOME/.claude" && open "$HOME/.claude"
    {
      "env": {
        "ANTHROPIC_AUTH_TOKEN": "sk-xxx",
-       "ANTHROPIC_BASE_URL": "https://rightapi.ai",
+       "ANTHROPIC_BASE_URL": "https://api.site",
        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
      }
    }
@@ -162,6 +164,8 @@ mkdir -p "$HOME/.claude" && open "$HOME/.claude"
 3. 将`settings.json`文件下 `ANTHROPIC_AUTH_TOKEN` 部分的`sk-xxx`替换为你在后台生成的 ApiKey，然后保存
 
    ![](/assets/image/rc_cli_config/rc-11.webp)
+
+   > 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ::::
 

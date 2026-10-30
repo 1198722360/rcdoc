@@ -88,7 +88,7 @@ hermes --version
 ## 二、配置 Right Code
 
 :::important
-Hermes 走的是 OpenAI 兼容接口，所有渠道的 `base_url` 都统一填 `https://www.rightapi.ai/v1`，**使用哪个渠道由 ApiKey 绑定的渠道决定**。想换渠道，只需要换一个绑定了对应渠道的 Key，地址不用改。
+Hermes 走的是 OpenAI 兼容接口，所有渠道的 `base_url` 都统一填 `https://api.site/v1`，**使用哪个渠道由 ApiKey 绑定的渠道决定**。想换渠道，只需要换一个绑定了对应渠道的 Key，地址不用改。
 :::
 
 1. 打开 Hermes 的配置文件夹
@@ -131,7 +131,7 @@ xdg-open "$HOME/.hermes"
    model:
      default: gpt-6.1-sol
      provider: rightcode
-     base_url: https://www.rightapi.ai/v1
+     base_url: https://api.site/v1
      api_mode: chat_completions
    ```
 
@@ -145,12 +145,14 @@ xdg-open "$HOME/.hermes"
 
    ```bash
    OPENAI_API_KEY=你的 Right Code Key
-   OPENAI_BASE_URL=https://www.rightapi.ai/v1
+   OPENAI_BASE_URL=https://api.site/v1
    ```
 
    > `.env` 文件内容比较长，直接拉到文件**最末尾**，把这两行加在最后面，再把 `你的 Right Code Key` 替换为你在后台生成的 ApiKey（`sk-` 开头），然后保存。如果文件里已经有 `OPENAI_API_KEY` 或 `OPENAI_BASE_URL`，直接改原来那一行即可，不要重复写。
 
    ![](/assets/image/rc_extension/hermes/rc-01.webp)
+
+   > 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 :::important
 注意生成的 Key 要选对渠道：`可用渠道` 记得选择你要使用的渠道，`可用模型` 保持默认即可。具体步骤见 [ApiKey 生成](/docs/rc_quick_start/apikey.html#如何生成apikey)。

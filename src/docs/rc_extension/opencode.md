@@ -99,6 +99,8 @@ sudo npm install -g opencode-ai
 
    ![GPT配置](/assets/image/rc_extension/opencode/rc-04.webp)
 
+   > 注意：以上三张图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`（压缩包里的 `opencode.json` 已更新为新地址）。
+
 :::important
 注意查看 [ApiKey 生成](/docs/rc_quick_start/apikey.html#如何生成apikey) 教程，要生成正确渠道的 Key：`可用渠道` 记得选择你要使用的渠道，`可用模型` 保持默认即可。
 :::

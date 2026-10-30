@@ -8,7 +8,7 @@
             "npm": "@ai-sdk/google",
             "name": "RCode_Google",
             "options": {
-                "baseURL": "https://www.rightapi.ai/v1beta",
+                "baseURL": "https://api.site/v1beta",
                 "apiKey": ""
             },
             "models": {
@@ -74,7 +74,7 @@
             "npm": "@ai-sdk/anthropic",
             "name": "RCode_ClaudeCode",
             "options": {
-                "baseURL": "https://www.rightapi.ai/v1",
+                "baseURL": "https://api.site/v1",
                 "apiKey": ""
             },
             "models": {
@@ -201,7 +201,7 @@
             "name": "RCode_OpenAI",
             "options": {
                 "setCacheKey": true,
-                "baseURL": "https://www.rightapi.ai/v1",
+                "baseURL": "https://api.site/v1",
                 "apiKey": ""
             },
             "models": {

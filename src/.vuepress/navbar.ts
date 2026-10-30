@@ -9,7 +9,7 @@ export default navbar([
   {
     text: "Right Code主站",
     icon: "nimbus:link",
-    link: "https://rightapi.ai",
+    link: "https://rightapi.io",
   },
   {
     text: "Right Code服务监控",

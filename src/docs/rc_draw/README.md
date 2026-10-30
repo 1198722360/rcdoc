@@ -30,7 +30,7 @@ Right Code 画图接口统一走**异步模式**：提交任务拿到 `task_id`�
 
 | 项 | 值 |
 | --- | --- |
-| 基础地址 | `https://rightapi.ai` |
+| 基础地址 | `https://api.site` |
 | 鉴权头 | `Authorization: Bearer sk-xxxxx` |
 | 请求格式 | `Content-Type: application/json`（OpenAI 图片编辑上传文件时用 `multipart/form-data`） |
 | 结果形态 | 图片 URL（不返回 base64） |

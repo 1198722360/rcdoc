@@ -12,7 +12,7 @@ footer: false
 #### responses接口
 
 ```bash
-curl https://rightapi.ai/v1/responses \
+curl https://api.site/v1/responses \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
@@ -40,7 +40,7 @@ curl https://rightapi.ai/v1/responses \
 #### completions接口
 
 ```bash
-curl https://rightapi.ai/v1/chat/completions \
+curl https://api.site/v1/chat/completions \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
@@ -64,7 +64,7 @@ curl https://rightapi.ai/v1/chat/completions \
 ### Claude
 
 ```bash
-curl https://rightapi.ai/v1/messages \
+curl https://api.site/v1/messages \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {此处填写ApiKey}' \
   -d '{
@@ -92,7 +92,7 @@ curl https://rightapi.ai/v1/messages \
 ### Gemini
 
 ```bash
-curl --location 'https://rightapi.ai/v1beta/models/gemini-3.8-flash:streamGenerateContent?alt=sse' \
+curl --location 'https://api.site/v1beta/models/gemini-3.8-flash:streamGenerateContent?alt=sse' \
 --header 'connection: keep-alive' \
 --header 'x-goog-api-key: {此处填写ApiKey}' \
 --header 'content-type: application/json' \
@@ -118,7 +118,7 @@ curl --location 'https://rightapi.ai/v1beta/models/gemini-3.8-flash:streamGenera
 Jev 是决策模型，不生成文本：对 `state` 回答带类型的问题，返回概率和置信度。完整说明见 [Jev 决策模型](../rc_jev/README.md)。
 
 ```bash
-curl https://www.rightapi.ai/v1/systemone \
+curl https://api.site/v1/systemone \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{

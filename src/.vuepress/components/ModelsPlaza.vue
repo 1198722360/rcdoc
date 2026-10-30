@@ -93,7 +93,7 @@ const toastType = ref('success');
 let toastTimer = null;
 
 // 开发环境使用代理，生产环境使用完整 URL
-const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://rightapi.ai';
+const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://api.site';
 
 const fetchModels = async () => {
   loading.value = true;
@@ -113,7 +113,7 @@ const fetchModels = async () => {
 // Codex 系渠道走 OpenAI 兼容地址，其余渠道统一使用根地址
 const V1_PREFIXES = ['/codex', '/codex-out'];
 const getBaseUrl = (prefix) =>
-  V1_PREFIXES.includes(prefix) ? 'https://rightapi.ai/v1' : 'https://rightapi.ai';
+  V1_PREFIXES.includes(prefix) ? 'https://api.site/v1' : 'https://api.site';
 
 // 备注来自后台富文本，只保留少量安全标签与属性
 const ALLOWED_TAGS = new Set(['P', 'H3', 'BR', 'SPAN', 'A', 'STRONG', 'B', 'EM']);

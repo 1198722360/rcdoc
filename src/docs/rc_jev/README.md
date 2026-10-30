@@ -33,7 +33,7 @@ Jev 是 TypeSafe 推出的 System One 决策模型。它**不生成文本**：�
 
 | 项 | 值 |
 | --- | --- |
-| 接口 | `POST https://www.rightapi.ai/v1/systemone` |
+| 接口 | `POST https://api.site/v1/systemone` |
 | 鉴权头 | `Authorization: Bearer sk-xxxxx` |
 | 请求格式 | `Content-Type: application/json`；带图片时也可以用 `multipart/form-data` |
 | 流式 | 不支持，一次返回完整结果 |
@@ -42,7 +42,7 @@ Jev 是 TypeSafe 推出的 System One 决策模型。它**不生成文本**：�
 
 ::: warning Key 与地址
 - 请使用**绑定了 Jev 渠道**的 ApiKey（见 [ApiKey 管理](../rc_quick_start/apikey.md)），直接调用上面的统一地址。
-- 未绑定渠道的旧 Key：把 `https://www.rightapi.ai` 换成[模型列表](../rc_quick_start/models.md)里复制的该渠道 BaseUrl，路径仍是 `/v1/systemone`。
+- 未绑定渠道的旧 Key：把 `https://api.site` 换成[模型列表](../rc_quick_start/models.md)里复制的该渠道 BaseUrl，路径仍是 `/v1/systemone`。
 - 鉴权请用 `Authorization: Bearer`。用 `x-api-key` 传 Key 会导致上游鉴权失败。
 :::
 
@@ -51,7 +51,7 @@ Jev 是 TypeSafe 推出的 System One 决策模型。它**不生成文本**：�
 下面一次请求同时问了三个问题：客户是否着急（是非）、该分给哪个团队（单选）、情绪有多激动（评分）。
 
 ```bash
-curl -sS https://www.rightapi.ai/v1/systemone \
+curl -sS https://api.site/v1/systemone \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -d '{

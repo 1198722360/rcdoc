@@ -8,7 +8,7 @@ export default hopeTheme({
 
   author: {
     name: "Right Code",
-    url: "https://rightapi.ai",
+    url: "https://rightapi.io",
   },
 
   logo: "/logo.webp",

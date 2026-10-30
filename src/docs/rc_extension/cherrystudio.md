@@ -49,13 +49,15 @@ CherryStudio 支持 OpenAI 兼容接口，可以直接接入 RightCode 使用。
 
 - `提供商名称`：填 `RightCode`
 - `API 密钥`：粘贴你在 RightCode 后台「令牌管理」页面生成的 ApiKey
-- `端点设置` → `OpenAI`：填 `https://rightapi.ai/v1`
+- `端点设置` → `OpenAI`：填 `https://api.site/v1`
 
 ![](/assets/image/rc_extension/cherrystudio/provider-form.webp)
 
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 :::warning 注意地址结尾的 /v1
-OpenAI 兼容的地址**必须带上 `/v1`**，即 `https://rightapi.ai/v1`。填写正确时，输入框下方会显示请求路径 `https://rightapi.ai/v1/chat/completions`。
-如果还要配置其他类型的端点（如 Anthropic），地址统一填 `https://rightapi.ai`，**不带** `/v1`。
+OpenAI 兼容的地址**必须带上 `/v1`**，即 `https://api.site/v1`。填写正确时，输入框下方会显示请求路径 `https://api.site/v1/chat/completions`。
+如果还要配置其他类型的端点（如 Anthropic），地址统一填 `https://api.site`，**不带** `/v1`。
 :::
 
 3. 进入「选择模型」页面，勾选你要使用的模型（可以多选，也可以直接全选），然后点击 `添加所选模型`
@@ -71,6 +73,8 @@ OpenAI 兼容的地址**必须带上 `/v1`**，即 `https://rightapi.ai/v1`。�
 5. 回到服务商页面，确认 `RightCode` 右上角的开关已经打开，并且模型列表里能看到刚才添加的模型，然后点击右下角 `下一步`
 
 ![](/assets/image/rc_extension/cherrystudio/provider-done.webp)
+
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 ## 三、选择默认模型
 
@@ -93,6 +97,6 @@ OpenAI 兼容的地址**必须带上 `/v1`**，即 `https://rightapi.ai/v1`。�
 ![](/assets/image/rc_extension/cherrystudio/chat-test.webp)
 
 :::tip 遇到问题？
-- **模型列表获取失败 / 检测不通过**：优先检查 ApiKey 是否复制完整，以及 API 地址是否为 `https://rightapi.ai/v1`。
+- **模型列表获取失败 / 检测不通过**：优先检查 ApiKey 是否复制完整，以及 API 地址是否为 `https://api.site/v1`。
 - **模型能添加但聊天报错**：确认当前 ApiKey 绑定的渠道是否支持该模型，可以换一个模型试试。
 :::

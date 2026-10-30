@@ -33,7 +33,7 @@ footer: false
 
 - **步骤三：**
   - 在 `API Key` 中粘贴你在后台令牌管理页面生成的密钥
-  - 确认 `API 请求地址`：GPT / Codex（OpenAI 兼容客户端） 填 `https://rightapi.ai/v1`，其他 CLI 或客户端统一填 `https://rightapi.ai`
+  - 确认 `API 请求地址`：GPT / Codex（OpenAI 兼容客户端） 填 `https://api.site/v1`，其他 CLI 或客户端统一填 `https://api.site`
   - 右下角点击添加
 
 ::: important
@@ -42,11 +42,15 @@ footer: false
 
 ![](/assets/image/rc_quick_start/rc-12.webp)
 
+> 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
+
 - **步骤四：**
 
   - 回到供应商列表，点击 `RightCode` 右侧的 ▷ 图标，让配置生效
 
   ![](/assets/image/rc_quick_start/rc-999.webp)
+
+  > 注意：图中的请求地址为旧地址，请改为 `https://api.site`；原来带 `/v1` 的保留 `/v1`，即 `https://api.site/v1`。
 
 - **步骤五：**
 

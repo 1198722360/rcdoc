@@ -10,7 +10,7 @@ footer: false
 TypeSafe 官方提供 Python 和 JavaScript SDK，把 base URL 指到 Right Code、换上你的 ApiKey 就能直接用。
 
 ::: warning 三个必改项
-1. **base URL**：`https://www.rightapi.ai`。SDK 会自动拼上 `/v1/systemone`，不要自己加 `/v1`。
+1. **base URL**：`https://api.site`。SDK 会自动拼上 `/v1/systemone`，不要自己加 `/v1`。
 2. **API Key**：使用绑定了 Jev 渠道的 Right Code ApiKey（`sk-xxxxx`）。
 3. **关闭请求压缩**：SDK 默认用 zstd 压缩 1 KiB 以上的请求体，Right Code 目前不支持，会返回 415。Python 传 `compression=False`，JavaScript 传 `compression: false`。
 :::
@@ -32,7 +32,7 @@ from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
 
 with TypeSafeClient(
     api_key="sk-xxxxx",
-    base_url="https://www.rightapi.ai",
+    base_url="https://api.site",
     model="jev-1.14.0",
     compression=False,  # Right Code 不接受压缩的请求体
 ) as client:
@@ -74,7 +74,7 @@ from typesafe_sdk import Box, Image, Noul, TypeSafeClient
 
 with TypeSafeClient(
     api_key="sk-xxxxx",
-    base_url="https://www.rightapi.ai",
+    base_url="https://api.site",
     model="jev-1.14.0",  # box 题需要 1.14
     compression=False,
     headers={"TypeSafe-Danger-Zone-Images": "true"},
@@ -105,7 +105,7 @@ from typesafe_sdk import AsyncTypeSafeClient, Noul
 async def main() -> None:
     async with AsyncTypeSafeClient(
         api_key="sk-xxxxx",
-        base_url="https://www.rightapi.ai",
+        base_url="https://api.site",
         model="jev-1.14.0",
         compression=False,
     ) as client:
@@ -142,7 +142,7 @@ import { TypeSafeClient, choice, noul, score } from "@typesafe-ai/sdk";
 
 const client = new TypeSafeClient({
   apiKey: "sk-xxxxx",
-  baseURL: "https://www.rightapi.ai",
+  baseURL: "https://api.site",
   defaultModel: "jev-1.14.0",
   compression: false, // Right Code 不接受压缩的请求体
 });
@@ -175,7 +175,7 @@ import { TypeSafeClient, box, image, noul } from "@typesafe-ai/sdk";
 
 const client = new TypeSafeClient({
   apiKey: "sk-xxxxx",
-  baseURL: "https://www.rightapi.ai",
+  baseURL: "https://api.site",
   defaultModel: "jev-1.14.0", // box 题需要 1.14
   compression: false,
   defaultHeaders: { "TypeSafe-Danger-Zone-Images": "true" },

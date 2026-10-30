@@ -7,7 +7,7 @@ footer: false
 
 ## 一、注册新账号
 
-1. 打开 Right Code 注册页面：[https://rightapi.ai/register](https://rightapi.ai/register)
+1. 打开 Right Code 注册页面：[https://rightapi.io/register](https://rightapi.io/register)
 
 ![](/assets/image/rc_quick_start/rc-15.webp)
 
@@ -18,11 +18,11 @@ footer: false
 
 ## 二、使用 Linux Do 登录
 
-如果你有 [Linux Do](https://linux.do) 账号，不用单独注册，直接在 [登录页面](https://rightapi.ai/login) 点击 `使用 Linux Do 登录`，按提示完成授权即可。
+如果你有 [Linux Do](https://linux.do) 账号，不用单独注册，直接在 [登录页面](https://rightapi.io/login) 点击 `使用 Linux Do 登录`，按提示完成授权即可。
 
 ## 三、登录与找回密码
 
-- **登录**：在 [登录页面](https://rightapi.ai/login) 输入用户名或邮箱，以及密码。
+- **登录**：在 [登录页面](https://rightapi.io/login) 输入用户名或邮箱，以及密码。
 - **忘记密码**：在登录页面点击密码框右上方的 `忘记密码？`，按提示通过注册邮箱重置。
 
 ## 四、下一步

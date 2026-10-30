@@ -63,7 +63,7 @@ TypeSafe-Danger-Zone-Images: true
 base64 很长，建议把请求体存成文件再发：
 
 ```bash
-curl -sS https://www.rightapi.ai/v1/systemone \
+curl -sS https://api.site/v1/systemone \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "Content-Type: application/json" \
   -H "TypeSafe-Danger-Zone-Images: true" \
@@ -187,7 +187,7 @@ base64 会让体积增大约三分之一，图片多或图片大时建议用 `mu
 ```
 
 ```bash
-curl -sS https://www.rightapi.ai/v1/systemone \
+curl -sS https://api.site/v1/systemone \
   -H "Authorization: Bearer sk-xxxxx" \
   -H "TypeSafe-Danger-Zone-Images: true" \
   -F "request=<request.json;type=application/json" \
