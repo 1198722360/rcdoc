@@ -19,11 +19,13 @@ Right Code 画图接口统一走**异步模式**：提交任务拿到 `task_id`�
 | `gpt-image-2` | GPT Image 2 基础模型 | [OpenAI 生成](./openai.md) |
 | `gpt-image-2.5-flare` | 速度优先，适合日常高质量图片生成 | [OpenAI 生成](./openai.md) |
 | `gpt-image-2.5-sunburst` | 能力优先，适合对编辑精度要求高的场景 | [OpenAI 生成](./openai.md) |
+| `gpt-image-2.6-flare` | 快速生成与编辑，支持输出 GIF 动图 | [OpenAI 生成](./openai.md) |
+| `gpt-image-2.6-sunburst` | 精细构图与编辑，支持输出 GIF 动图 | [OpenAI 生成](./openai.md) |
 | `gemini-3-pro-image-preview` | Nano Banana Pro，画质和理解能力优先 | [Gemini 生成](./gemini.md) |
 | `gemini-nano-banana-2.1` | Nano Banana 2 系列，速度优先 | [Gemini 生成](./gemini.md) |
 
 ::: warning 质量档位
-`xhigh` 和 `max` 是 GPT Image 2.5 新增的质量档位，只能用于 `gpt-image-2.5-flare` 和 `gpt-image-2.5-sunburst`。`gpt-image-2` 仍只支持 `auto`、`low`、`medium`、`high`。
+`xhigh` 和 `max` 是 GPT Image 2.5 新增的质量档位，2.5 和 2.6 的 Flare / Sunburst 四个模型都可以用。`gpt-image-2` 仍只支持 `auto`、`low`、`medium`、`high`。
 :::
 
 ## 基础信息
@@ -48,10 +50,11 @@ Right Code 画图接口统一走**异步模式**：提交任务拿到 `task_id`�
 
 | 对比项 | OpenAI 生成 | Gemini 生成 |
 | --- | --- | --- |
-| 模型 | `gpt-image-2`、`gpt-image-2.5-flare`、`gpt-image-2.5-sunburst` | `gemini-3-pro-image-preview`、`gemini-nano-banana-2.1` |
+| 模型 | `gpt-image-2`、`gpt-image-2.5-flare` / `sunburst`、`gpt-image-2.6-flare` / `sunburst` | `gemini-3-pro-image-preview`、`gemini-nano-banana-2.1` |
 | 模型写在哪 | 请求体 `model` 字段 | 请求路径 `/v1beta/models/{model}:generateContent` |
 | 尺寸写法 | `size` 像素值，如 `1024x1024`、`1536x1024` | `aspectRatio` 比例 + `imageSize` 档位（`1K` / `2K` / `4K`） |
-| 质量控制 | `quality`：`auto` / `low` / `medium` / `high`，2.5 模型另有 `xhigh` / `max` | 通过 `imageSize` 档位控制 |
+| 质量控制 | `quality`：`auto` / `low` / `medium` / `high`，2.5 / 2.6 模型另有 `xhigh` / `max` | 通过 `imageSize` 档位控制 |
+| 输出格式 | `png` / `jpeg` / `webp`，2.6 模型另支持 `gif` 动图 | 图片 |
 | 文生图 | ✅ `/v1/images/generations` | ✅ `generateContent` |
 | 参考图 / 图片编辑 | ✅ `/v1/images/edits`，支持上传文件、URL、base64 | ✅ 同一接口，`parts` 里加 `inline_data`（base64） |
 | 多图参考 | ✅ | ✅ |
@@ -70,6 +73,8 @@ Right Code 画图接口统一走**异步模式**：提交任务拿到 `task_id`�
 
 ::: tip
 不带 `"async": true` 时，接口会先等结果（默认最多 60 秒），超时同样返回 `task_id`。图片生成耗时波动较大，建议始终带 `"async": true`，统一按轮询处理。
+
+例外：OpenAI 图片编辑用 `multipart/form-data` 上传文件时目前不支持异步，会同步返回结果，详见 [OpenAI 生成 · 图片编辑](./openai.md#图片编辑)。
 :::
 
 ### 提交就失败
