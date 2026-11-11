@@ -4,7 +4,8 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  // 正式文档地址：sitemap、robots.txt、og:url 和 canonical 都用它（docs.rightapi.ai / docs.right.codes 跳到这里）。
+  hostname: "https://docs.rightapi.io",
 
   author: {
     name: "Right Code",
@@ -122,6 +123,11 @@ export default hopeTheme({
 
     icon: {
       prefix: "fa6-solid:",
+    },
+
+    // 每页声明 canonical 为 docs.rightapi.io 上的地址，同一内容在其他文档域名上不重复收录。
+    seo: {
+      canonical: "https://docs.rightapi.io",
     },
 
     slimsearch:{
